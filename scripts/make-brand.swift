@@ -125,3 +125,45 @@ do {
     drawText(ctx, "$2,377 back.", at: CGPoint(x: 150, y: 170), size: 110, color: mint)
     save(ctx, "\(root)/docs/brand/post-reveal.png")
 }
+
+// ---- Website assets (docs/ root). See SEO-SPEC: og.png, favicons, manifest icons. ----
+
+/// Width of a string at a given size, so the link-preview text can be laid out without guessing.
+func textWidth(_ text: String, size: CGFloat, weight: NSFont.Weight = .bold) -> CGFloat {
+    let font = NSFont.systemFont(ofSize: size, weight: weight)
+    let line = CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [.font: font]))
+    return CGFloat(CTLineGetTypographicBounds(line, nil, nil, nil))
+}
+
+// Open Graph / Twitter card, 1200x630. Text is sized to stay readable in a small link preview.
+do {
+    let ctx = context(1200, 630)
+    ctx.setFillColor(navy)
+    ctx.fill(CGRect(x: 0, y: 0, width: 1200, height: 630))
+    roundedRect(ctx, CGRect(x: 40, y: 40, width: 1120, height: 550), 48, surface)
+    drawDrop(ctx, center: CGPoint(x: 132, y: 492), height: 96, fill: mint, waterline: true)
+    drawText(ctx, "Damp", at: CGPoint(x: 190, y: 466), size: 72, color: white)
+    drawText(ctx, "Drink less.", at: CGPoint(x: 96, y: 300), size: 124, color: white, weight: .heavy)
+    drawText(ctx, "Not never.", at: CGPoint(x: 96, y: 172), size: 124, color: mint, weight: .heavy)
+    drawText(ctx, "Dry nights and money kept. One tap a night.", at: CGPoint(x: 100, y: 92), size: 40,
+             color: CGColor(red: 1, green: 1, blue: 1, alpha: 0.72), weight: .semibold)
+    let domain = "usedamp.app"
+    drawText(ctx, domain, at: CGPoint(x: 1104 - textWidth(domain, size: 34, weight: .semibold), y: 478), size: 34,
+             color: CGColor(red: 1, green: 1, blue: 1, alpha: 0.62), weight: .semibold)
+    save(ctx, "\(root)/docs/og.png")
+}
+
+// Favicons and manifest icons. The 32px one drops the waterline: it turns to mush at that size.
+for (size, name, rounded) in [(32, "favicon-32.png", true), (180, "apple-touch-icon.png", false),
+                              (192, "icon-192.png", false), (512, "icon-512.png", false)] {
+    let s = CGFloat(size)
+    let ctx = context(size, size)
+    if rounded {
+        roundedRect(ctx, CGRect(x: 0, y: 0, width: s, height: s), s * 0.22, navy)
+    } else {
+        ctx.setFillColor(navy)
+        ctx.fill(CGRect(x: 0, y: 0, width: s, height: s))
+    }
+    drawDrop(ctx, center: CGPoint(x: s / 2, y: s * 0.49), height: s * (size <= 32 ? 0.74 : 0.62), fill: mint, waterline: size > 32)
+    save(ctx, "\(root)/docs/\(name)")
+}

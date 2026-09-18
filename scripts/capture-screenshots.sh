@@ -13,3 +13,9 @@ for s in hook drinks price reasons reveal goal first result paywall home log mil
 done
 # Downscaled copies for quick review in the repo.
 cd "$OUT" && for f in $(ls *.png | grep -v '^small-'); do sips -Z 600 "$f" --out "small-$f" >/dev/null; done
+# 2x WebP copies for the landing page (docs/index.html uses these with small-*.png as the fallback).
+if command -v cwebp >/dev/null; then
+  for s in home reveal log milestone; do cwebp -quiet -q 80 -resize 552 1200 "$s.png" -o "web-$s.webp"; done
+else
+  echo "cwebp not found (brew install webp): skipped web-*.webp for the site"
+fi

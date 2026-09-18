@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drinking Cost Calculator: What Alcohol Costs a Year | Damp</title>
+<meta name="description" content="Work out what your drinks cost a year and how much a few dry nights a week gives back. A simple drinking cost calculator with the math shown in full.">
+<link rel="canonical" href="https://usedamp.app/drinking-cost-calculator.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0f121a">
+<meta property="og:title" content="Drinking Cost Calculator: What Alcohol Costs a Year | Damp">
+<meta property="og:description" content="Work out what your drinks cost a year and how much a few dry nights a week gives back. A simple drinking cost calculator with the math shown in full.">
+<meta property="og:url" content="https://usedamp.app/drinking-cost-calculator.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Damp">
+<meta property="og:image" content="https://usedamp.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Damp app logo with the words: Drink less. Not never. Dry nights and money kept. One tap a night.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Drinking Cost Calculator: What Alcohol Costs a Year | Damp">
+<meta name="twitter:description" content="Work out what your drinks cost a year and how much a few dry nights a week gives back. A simple drinking cost calculator with the math shown in full.">
+<meta name="twitter:image" content="https://usedamp.app/og.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f121a'/%3E%3Cpath d='M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z' fill='%237de8b8'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  :root {
+    --bg: #0f121a; --surface: #1c2129; --raised: #29303d;
+    --fg: #fff; --muted: rgba(255,255,255,.72); --faint: rgba(255,255,255,.6);
+    --accent: #7de8b8; --danger: #fa7366; --warn: #fac761;
+    --radius: 20px;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  main a { color: var(--accent); }
+  a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #000; padding: 10px 14px; border-radius: 0 0 10px 0; font-weight: 700; }
+  .skip:focus { left: 0; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
+  header nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  header nav a:hover { color: var(--fg); }
+  .crumbs { font-size: 14px; color: var(--faint); margin: 24px 0 0; }
+  .crumbs a { color: var(--faint); }
+  h1 { font-size: clamp(32px, 6.5vw, 46px); line-height: 1.1; letter-spacing: -.025em; margin: 14px 0 18px; font-weight: 800; }
+  .lede { font-size: 20px; color: var(--muted); margin: 0 0 12px; }
+  h2 { font-size: 26px; letter-spacing: -.02em; margin: 44px 0 10px; font-weight: 800; line-height: 1.2; }
+  h3 { font-size: 18px; margin: 24px 0 4px; }
+  main p, main li { color: var(--muted); }
+  main li { margin-bottom: 8px; }
+  main strong { color: var(--fg); }
+  .card { background: var(--surface); border-radius: var(--radius); padding: 22px; margin: 28px 0; }
+  .card h2 { margin-top: 0; font-size: 22px; }
+  .card p:last-child { margin-bottom: 0; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #000 !important; font-weight: 700; padding: 13px 20px; border-radius: 16px; text-decoration: none; font-size: 17px; }
+  .help { font-size: 14px; color: var(--faint) !important; margin-top: 36px; }
+  .calc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 20px; }
+  .calc label { display: block; font-size: 14px; color: var(--muted); }
+  .calc input, .calc select { display: block; width: 100%; margin-top: 6px; background: var(--bg); color: var(--fg); border: 1px solid var(--raised); border-radius: 12px; padding: 12px; font: inherit; font-variant-numeric: tabular-nums; }
+  .out { display: grid; gap: 14px; }
+  .out p { margin: 0; }
+  .out b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -.02em; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .out .spend b { color: var(--danger); } .out .food b { color: var(--warn); } .out .back b { color: var(--accent); }
+  footer { margin-top: 56px; padding: 40px 0 60px; color: var(--faint); font-size: 14px; border-top: 1px solid var(--raised); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+  footer a { color: var(--faint); }
+  footer a:hover { color: var(--fg); }
+  footer .copy { margin-top: 14px; }
+  @media (max-width: 560px) { .calc { grid-template-columns: 1fr; } header nav a { margin-left: 14px; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Drinking cost calculator: what your drinks cost a year",
+  "description": "Work out what your drinks cost a year and how much a few dry nights a week gives back. A simple drinking cost calculator with the math shown in full.",
+  "image": "https://usedamp.app/og.png",
+  "datePublished": "2026-09-18",
+  "dateModified": "2026-09-18",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://usedamp.app/#org",
+    "name": "Damp",
+    "url": "https://usedamp.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usedamp.app/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "email": "support@usedamp.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://usedamp.app/#org",
+    "name": "Damp",
+    "url": "https://usedamp.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usedamp.app/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "email": "support@usedamp.app"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://usedamp.app/drinking-cost-calculator.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Damp",
+      "item": "https://usedamp.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Drinking cost calculator",
+      "item": "https://usedamp.app/drinking-cost-calculator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/" aria-label="Damp home">
+      <svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1c2129"/><path d="M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z" fill="#7de8b8"/></svg>
+      Damp
+    </a>
+    <nav aria-label="Primary">
+      <a href="/#how">How it works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+  </header>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Damp</a> › Drinking cost calculator</nav>
+    <article>
+    <h1>Drinking cost calculator: what your drinks cost a year</h1>
+    <p class="lede">Two numbers, drinks per week and price per drink, are enough to see what alcohol costs you a year and what a few dry nights a week would give back.</p>
+
+    <div class="card">
+      <h2 id="calc-h">Your numbers</h2>
+      <form class="calc" aria-labelledby="calc-h" onsubmit="return false">
+        <label>Drinks a week <input id="drinks" type="number" inputmode="numeric" min="0" max="200" step="1" value="10"></label>
+        <label>Price per drink ($) <input id="price" type="number" inputmode="decimal" min="0" max="500" step="0.5" value="8"></label>
+        <label>Dry nights a week <select id="goal"><option>3</option><option selected>4</option><option>5</option><option>7</option></select></label>
+      </form>
+      <div class="out" aria-live="polite">
+        <p class="spend">You spend about <b id="o-spend">$4,160</b> a year on alcohol.</p>
+        <p class="food">In calories, that's roughly <b id="o-food">39 days of food</b></p>
+        <p class="back"><span id="o-goal">4</span> dry nights a week gives you back <b id="o-back">$2,377</b> a year.</p>
+      </div>
+    </div>
+    <p>Nothing you type here is stored or sent anywhere. The sums run in your browser.</p>
+
+    <h2>The math</h2>
+    <p>These are the same sums the Damp app runs during setup.</p>
+    <ul>
+      <li><strong>Yearly spend</strong> = drinks per week × 52 × price per drink.</li>
+      <li><strong>One dry night</strong> = (drinks per week ÷ 7) × price per drink.</li>
+      <li><strong>Yearly money back</strong> = dry nights per week × 52 × the value of one dry night.</li>
+      <li><strong>Days of food</strong> = drinks per week × 52 × 150 calories ÷ 2,000 calories.</li>
+    </ul>
+
+    <h2>A worked example</h2>
+    <p>Ten drinks a week at $8 each is $80 a week, or <strong>$4,160 a year</strong>. Spread over seven nights that is about $11.43 a night, so four dry nights a week is worth about $45.71 a week, or <strong>$2,377 a year</strong>. Ten drinks a week is also 78,000 calories a year. At 2,000 calories a day, that is <strong>39 days of food</strong>.</p>
+
+    <h2>What the calculator assumes</h2>
+    <ul>
+      <li><strong>Your drinks are spread evenly across the week.</strong> Most people drink on fewer than seven nights, so a real drinking night usually costs more than the average, and skipping one saves more. The estimate is conservative on purpose.</li>
+      <li><strong>Your price is honest.</strong> Use what you really pay. A drink at a bar costs a lot more than one at home, so if you do both, pick a number in between, and count the tip and the delivery fee if those are part of the habit.</li>
+      <li><strong>150 calories a drink.</strong> That is a round figure for one standard drink. A light beer is lower; a cocktail or a large pour can be a good deal higher. The 2,000-calorie day is the general reference used on nutrition labels, not a target for you personally.</li>
+    </ul>
+    <p>It does not count the taxi home, the late-night food or the slow morning after. Those are real, but they are different for everyone, so they are left out instead of guessed.</p>
+
+    <h2>Why money is the number worth tracking</h2>
+    <p>It is yours, it is big, and you can check it. Once you have seen your own yearly figure, a dry night stops being an abstract good intention and becomes a specific amount you kept. That is easier to care about at 9pm on a Wednesday.</p>
+    <p>If you want to drink less without giving it up, that approach has a name: <a href="/damp-lifestyle.html">the damp lifestyle</a>.</p>
+    <div class="card">
+      <h2>Keep a running total</h2>
+      <p>Damp is an iPhone app that does this sum once during setup and then keeps score. Every night it asks "Dry tonight?" and one tap logs it. A dry night adds a night's worth to your "money kept"; a lighter night adds the difference. When you have a drink your streak resets, but the money you already kept stays.</p>
+      <p><a class="btn" href="/">See how Damp works</a></p>
+    </div>
+    <p class="help">Damp is a habit tracker, not medical advice. If drinking feels out of control, please talk to a doctor. In the US, SAMHSA's National Helpline is free, confidential and open 24/7: 1-800-662-4357.</p>
+    </article>
+  </main>
+  <footer>
+    <nav aria-label="Footer">
+      <a href="/">Damp home</a>
+      <a href="/damp-lifestyle.html">What is damp drinking?</a>
+      <a href="/drinking-cost-calculator.html">Drinking cost calculator</a>
+      <a href="/dry-january-tracker.html">Dry January tracker</a>
+      <a href="/privacy.html">Privacy policy</a>
+      <a href="/terms.html">Terms of use</a>
+      <a href="mailto:support@usedamp.app">Email support</a>
+      <a href="mailto:hello@usedamp.app">Press &amp; creators</a>
+    </nav>
+    <div class="copy">© 2026 Damp. Drink less. Not never.</div>
+  </footer>
+</div>
+<script>
+  (function () {
+    var d = document.getElementById("drinks"), p = document.getElementById("price"), g = document.getElementById("goal");
+    function money(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+    function run() {
+      var drinks = Math.min(Math.max(parseFloat(d.value) || 0, 0), 200);
+      var price = Math.min(Math.max(parseFloat(p.value) || 0, 0), 500);
+      var goal = parseInt(g.value, 10);
+      var spend = drinks * 52 * price;
+      var days = Math.floor(drinks * 52 * 150 / 2000);
+      document.getElementById("o-spend").textContent = money(spend);
+      document.getElementById("o-food").textContent = days.toLocaleString("en-US") + (days === 1 ? " day of food" : " days of food");
+      document.getElementById("o-back").textContent = money(goal * 52 * (drinks / 7) * price);
+      document.getElementById("o-goal").textContent = goal;
+    }
+    [d, p, g].forEach(function (el) { el.addEventListener("input", run); el.addEventListener("change", run); });
+    run();
+  })();
+</script>
+</body>
+</html>

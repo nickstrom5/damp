@@ -17,6 +17,11 @@ For Damp: APP=Damp, DOMAIN=usedamp.app, GH_USER=nickstrom5.
 - Landing page has one App Store button driven by a JS constant `APP_STORE_URL = ""`:
   empty shows "Get early access" (mailto), set shows "Download on the App Store".
 - All mailto links use `support@DOMAIN` or `hello@DOMAIN`.
+- SEO files at the site root: `robots.txt`, `sitemap.xml`, `404.html`, `site.webmanifest`, `.nojekyll`, `og.png`,
+  `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` (images come from `swift scripts/make-brand.swift`).
+  Every page carries its own title, description, canonical, Open Graph/Twitter tags and JSON-LD; all absolute URLs use DOMAIN.
+- Content pages (Damp): `damp-lifestyle.html`, `drinking-cost-calculator.html`, `dry-january-tracker.html`. When you add
+  or edit a page, add it to `sitemap.xml`, bump its `lastmod`, and link it from the index "Guides" list and the footer nav.
 
 ## 3. GitHub Pages
 - Repo → Settings → Pages: Source "Deploy from a branch", branch = main (or yours), folder
@@ -64,6 +69,28 @@ For Damp: APP=Damp, DOMAIN=usedamp.app, GH_USER=nickstrom5.
 - App Store Connect: support URL `https://DOMAIN/`, privacy policy `https://DOMAIN/privacy.html`.
 - In-app: paywall footer and settings link to privacy.html and terms.html; feedback → support@DOMAIN.
 - Bundle ID convention: reverse of DOMAIN, e.g. `app.usedamp.APP` (extensions `.widgets`).
+
+## 9. SEO after launch
+Do these once the site is live on DOMAIN with HTTPS.
+- Google Search Console (search.google.com/search-console): add a **Domain** property for DOMAIN and verify it with the
+  TXT record it gives you (Cloudflare → DNS → add TXT on `@`, DNS only). Then Sitemaps → submit `https://DOMAIN/sitemap.xml`.
+- Bing Webmaster Tools (bing.com/webmasters): "Import from Google Search Console", or add DOMAIN and verify by DNS.
+  Submit the same sitemap.
+- Request indexing: in Search Console, URL Inspection → paste `https://DOMAIN/` → Request indexing. Repeat for each
+  content page. Bing: URL Submission.
+- When the App Store Connect record exists, take the numeric Apple ID (App Information → Apple ID) and:
+  1. in `docs/index.html` uncomment `<meta name="apple-itunes-app" content="app-id=APP_ID">` and replace `APP_ID`
+     (Safari on iPhone then shows the Smart App Banner);
+  2. once the app is live, set `APP_STORE_URL` at the bottom of `docs/index.html` to `https://apps.apple.com/app/idAPP_ID`.
+     Optionally add `"downloadUrl"` / `"installUrl"` with the same URL to the `MobileApplication` JSON-LD block.
+- Validate: search.google.com/test/rich-results on `/` (FAQ, software app) and a content page (Article, Breadcrumb);
+  paste `https://DOMAIN/` into a link-preview debugger (e.g. opengraph.xyz) and check `og.png` shows.
+- Prices on the site (index pricing cards, the "How much does Damp cost?" FAQ, the JSON-LD `offers`, and
+  `terms.html`) must match `Damp/Resources/Products.storekit`. Change them together. The visible FAQ and the `FAQPage`
+  JSON-LD must stay word-for-word identical.
+- Do not add `aggregateRating` or review markup until there are real App Store ratings to cite.
+- Seasonal: before Dry January (mid-December) and Sober October (mid-September), bump `lastmod` on
+  `dry-january-tracker.html` in the sitemap after any refresh and re-request indexing.
 
 ## Gotchas
 - Orange (proxied) cloud on the A records means GitHub can never issue HTTPS. Must be grey.

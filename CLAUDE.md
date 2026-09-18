@@ -11,7 +11,7 @@ iOS app (SwiftUI, iOS 17+). Read `README.md` and `docs/01-strategy.md` first.
 - Screens: launch with `-screenshot <hook|drinks|price|reasons|reveal|goal|first|result|paywall|home|log|milestone|settings|share>`
   to open one screen with seeded data (`Damp/App/ScreenshotMode.swift`). `scripts/capture-screenshots.sh` and the
   `Screenshots` workflow capture all of them and write PNGs to `docs/screenshots/`. Look there before and after UI changes.
-- Brand images: `swift scripts/make-brand.swift` regenerates the app icon and `docs/brand/`.
+- Brand images: `swift scripts/make-brand.swift` regenerates the app icon, `docs/brand/`, and the site's `docs/og.png`, favicons and manifest icons.
 
 ## Runtime notes
 - No restricted entitlements. Only App Groups (`group.app.usedamp.damp`) for the widget.
