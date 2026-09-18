@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dry January &amp; Sober October Tracker for iPhone | Damp</title>
+<meta name="description" content="How to track Dry January or Sober October so one drink doesn&#x27;t end the month: count dry nights, watch the money add up, and log it with one tap a night.">
+<link rel="canonical" href="https://usedamp.app/dry-january-tracker.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0f121a">
+<meta property="og:title" content="Dry January &amp; Sober October Tracker for iPhone | Damp">
+<meta property="og:description" content="How to track Dry January or Sober October so one drink doesn&#x27;t end the month: count dry nights, watch the money add up, and log it with one tap a night.">
+<meta property="og:url" content="https://usedamp.app/dry-january-tracker.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Damp">
+<meta property="og:image" content="https://usedamp.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Damp app logo with the words: Drink less. Not never. Dry nights and money kept. One tap a night.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dry January &amp; Sober October Tracker for iPhone | Damp">
+<meta name="twitter:description" content="How to track Dry January or Sober October so one drink doesn&#x27;t end the month: count dry nights, watch the money add up, and log it with one tap a night.">
+<meta name="twitter:image" content="https://usedamp.app/og.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f121a'/%3E%3Cpath d='M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z' fill='%237de8b8'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  :root {
+    --bg: #0f121a; --surface: #1c2129; --raised: #29303d;
+    --fg: #fff; --muted: rgba(255,255,255,.72); --faint: rgba(255,255,255,.6);
+    --accent: #7de8b8; --danger: #fa7366; --warn: #fac761;
+    --radius: 20px;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  main a { color: var(--accent); }
+  a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #000; padding: 10px 14px; border-radius: 0 0 10px 0; font-weight: 700; }
+  .skip:focus { left: 0; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
+  header nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  header nav a:hover { color: var(--fg); }
+  .crumbs { font-size: 14px; color: var(--faint); margin: 24px 0 0; }
+  .crumbs a { color: var(--faint); }
+  h1 { font-size: clamp(32px, 6.5vw, 46px); line-height: 1.1; letter-spacing: -.025em; margin: 14px 0 18px; font-weight: 800; }
+  .lede { font-size: 20px; color: var(--muted); margin: 0 0 12px; }
+  h2 { font-size: 26px; letter-spacing: -.02em; margin: 44px 0 10px; font-weight: 800; line-height: 1.2; }
+  h3 { font-size: 18px; margin: 24px 0 4px; }
+  main p, main li { color: var(--muted); }
+  main li { margin-bottom: 8px; }
+  main strong { color: var(--fg); }
+  .card { background: var(--surface); border-radius: var(--radius); padding: 22px; margin: 28px 0; }
+  .card h2 { margin-top: 0; font-size: 22px; }
+  .card p:last-child { margin-bottom: 0; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #000 !important; font-weight: 700; padding: 13px 20px; border-radius: 16px; text-decoration: none; font-size: 17px; }
+  .help { font-size: 14px; color: var(--faint) !important; margin-top: 36px; }
+  .calc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 20px; }
+  .calc label { display: block; font-size: 14px; color: var(--muted); }
+  .calc input, .calc select { display: block; width: 100%; margin-top: 6px; background: var(--bg); color: var(--fg); border: 1px solid var(--raised); border-radius: 12px; padding: 12px; font: inherit; font-variant-numeric: tabular-nums; }
+  .out { display: grid; gap: 14px; }
+  .out p { margin: 0; }
+  .out b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -.02em; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .out .spend b { color: var(--danger); } .out .food b { color: var(--warn); } .out .back b { color: var(--accent); }
+  footer { margin-top: 56px; padding: 40px 0 60px; color: var(--faint); font-size: 14px; border-top: 1px solid var(--raised); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+  footer a { color: var(--faint); }
+  footer a:hover { color: var(--fg); }
+  footer .copy { margin-top: 14px; }
+  @media (max-width: 560px) { .calc { grid-template-columns: 1fr; } header nav a { margin-left: 14px; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "A Dry January and Sober October tracker that survives one drink",
+  "description": "How to track Dry January or Sober October so one drink doesn't end the month: count dry nights, watch the money add up, and log it with one tap a night.",
+  "image": "https://usedamp.app/og.png",
+  "datePublished": "2026-09-18",
+  "dateModified": "2026-09-18",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://usedamp.app/#org",
+    "name": "Damp",
+    "url": "https://usedamp.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usedamp.app/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "email": "support@usedamp.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://usedamp.app/#org",
+    "name": "Damp",
+    "url": "https://usedamp.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usedamp.app/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "email": "support@usedamp.app"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://usedamp.app/dry-january-tracker.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Damp",
+      "item": "https://usedamp.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Dry January tracker",
+      "item": "https://usedamp.app/dry-january-tracker.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/" aria-label="Damp home">
+      <svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1c2129"/><path d="M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z" fill="#7de8b8"/></svg>
+      Damp
+    </a>
+    <nav aria-label="Primary">
+      <a href="/#how">How it works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+  </header>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Damp</a> › Dry January tracker</nav>
+    <article>
+    <h1>A Dry January and Sober October tracker that survives one drink</h1>
+    <p class="lede">A dry month is a simple deal: no alcohol from the 1st to the last day. The hard part is not the rule. It is remembering to keep score, and knowing what to do if you have a drink on day nine.</p>
+    <p>Dry January runs from January 1 to 31. Sober October is the same idea, October 1 to 31. Some people do both, and some pick a quiet month of their own. The tracking is the same whichever month you choose.</p>
+
+    <h2>What to track in a dry month</h2>
+    <ul>
+      <li><strong>Dry nights, as a total.</strong> This is the number that matters most. It only goes up.</li>
+      <li><strong>Your current streak.</strong> Dry nights in a row. Satisfying, and the thing you will want to protect in week three.</li>
+      <li><strong>Money kept.</strong> Work out what a normal month of drinking costs you before you start, so that every dry night has a price tag. The <a href="/drinking-cost-calculator.html">drinking cost calculator</a> does it in a few seconds.</li>
+    </ul>
+    <p>You do not need to track much more. A challenge you have to journal about every evening is a second challenge.</p>
+
+    <h2>What happens if you have a drink</h2>
+    <p>This is where a dry month often ends. Not because of the drink, but because of the counter. If the only number you have is a streak and it goes back to zero, it feels as if the month is over, and plenty of people stop there.</p>
+    <p>It helps to decide in advance how you will score it. Twenty-nine dry nights out of thirty-one is still twenty-nine dry nights, and still most of a month's drinking money kept. Write the drink down, let the streak restart, and keep the total. The month still counts.</p>
+
+    <h2>Setting up Damp for a dry month</h2>
+    <ol>
+      <li><strong>Enter your usual numbers.</strong> Drinks per week and what a drink costs you, from before the challenge. That is the baseline your savings are measured against.</li>
+      <li><strong>Pick the challenge reason</strong> ("Sober October / a challenge"), along with anything else that applies: sleep, money, weight.</li>
+      <li><strong>Set your goal to 7 dry nights a week.</strong></li>
+      <li><strong>Choose a check-in time.</strong> The default is 9pm. Your phone asks "Dry tonight?" and you tap Dry on the notification, without opening the app.</li>
+    </ol>
+    <p>You get a card at 1, 3, 7, 14 and 30 dry nights in a row. If you have a drink, tap "I had a drink" and say how many. The streak resets; your dry-night total, your savings and your history do not. If you forget to log a night, the home screen asks about it the next morning, and a night you never log does not count for or against you.</p>
+
+    <h2>After the month</h2>
+    <p>The usual pattern is a dry month followed by a return to exactly how things were. A more useful ending is to keep some of it. On the 1st of the next month, change the goal in Settings from 7 dry nights a week to 4 or 5 and carry on tapping. Same app, same streak, same running total. That is <a href="/damp-lifestyle.html">the damp lifestyle</a>: drink less, not never.</p>
+
+    <h2>One caution</h2>
+    <p>A dry month is a habit challenge, not a treatment. If you drink heavily every day, stopping suddenly can be dangerous for some people, so talk to a doctor before you start.</p>
+    <div class="card">
+      <h2>Start on the 1st, or start tonight</h2>
+      <p>Damp is a dry nights tracker for iPhone: one tap a night, a streak, and the money you kept. It works for a dry month and for the eleven months after it. No account, nothing to set up beyond your own numbers.</p>
+      <p><a class="btn" href="/">See how Damp works</a></p>
+    </div>
+    <p class="help">Damp is a habit tracker, not medical advice. If drinking feels out of control, please talk to a doctor. In the US, SAMHSA's National Helpline is free, confidential and open 24/7: 1-800-662-4357.</p>
+    </article>
+  </main>
+  <footer>
+    <nav aria-label="Footer">
+      <a href="/">Damp home</a>
+      <a href="/damp-lifestyle.html">What is damp drinking?</a>
+      <a href="/drinking-cost-calculator.html">Drinking cost calculator</a>
+      <a href="/dry-january-tracker.html">Dry January tracker</a>
+      <a href="/privacy.html">Privacy policy</a>
+      <a href="/terms.html">Terms of use</a>
+      <a href="mailto:support@usedamp.app">Email support</a>
+      <a href="mailto:hello@usedamp.app">Press &amp; creators</a>
+    </nav>
+    <div class="copy">© 2026 Damp. Drink less. Not never.</div>
+  </footer>
+</div>
+</body>
+</html>

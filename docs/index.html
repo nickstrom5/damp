@@ -3,33 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Damp – Drink less. Not never.</title>
-<meta name="description" content="Damp counts your dry nights, the money you kept and the mornings you woke up clear. One tap a night. No account, no coach, no judgment.">
-<meta property="og:title" content="Damp – Drink less. Not never.">
-<meta property="og:description" content="One tap a night. A streak, the money you didn't spend, a card at every milestone.">
+<title>Damp: Drink Less App &amp; Dry Days Tracker for iPhone</title>
+<meta name="description" content="Damp is a drink less app for iPhone. Track dry nights and the money you kept with one tap a night. Cut back without quitting. No account, no judgment.">
+<link rel="canonical" href="https://usedamp.app/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0f121a">
+<!-- Smart App Banner: uncomment and replace APP_ID with the numeric Apple ID once the App Store Connect record exists.
+<meta name="apple-itunes-app" content="app-id=APP_ID">
+-->
+<meta property="og:title" content="Damp: Drink less. Not never.">
+<meta property="og:description" content="A drink less app for iPhone. One tap a night, a streak of dry nights, the money you kept, and a card at every milestone.">
 <meta property="og:url" content="https://usedamp.app/">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f121a'/%3E%3Cpath d='M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z' fill='%237de8b8'/%3E%3C/svg%3E">
+<meta property="og:site_name" content="Damp">
+<meta property="og:image" content="https://usedamp.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Damp app logo with the words: Drink less. Not never. Dry nights and money kept. One tap a night.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Damp: Drink less. Not never.">
+<meta name="twitter:description" content="A drink less app for iPhone. One tap a night, a streak of dry nights, the money you kept, and a card at every milestone.">
+<meta name="twitter:image" content="https://usedamp.app/og.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f121a'/%3E%3Cpath d='M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z' fill='%237de8b8'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <style>
   :root {
     --bg: #0f121a; --surface: #1c2129; --raised: #29303d;
-    --fg: #fff; --muted: rgba(255,255,255,.62); --faint: rgba(255,255,255,.38);
+    --fg: #fff; --muted: rgba(255,255,255,.68); --faint: rgba(255,255,255,.6);
     --accent: #7de8b8; --danger: #fa7366; --warn: #fac761;
     --radius: 20px;
   }
   * { box-sizing: border-box; }
-  html { color-scheme: dark; scroll-behavior: smooth; }
+  html { color-scheme: dark; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: inherit; }
+  a:focus-visible, summary:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #000; padding: 10px 14px; border-radius: 0 0 10px 0; font-weight: 700; }
+  .skip:focus { left: 0; }
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
   .logo svg { width: 28px; height: 28px; }
-  nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  header nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  header nav a:hover { color: var(--fg); }
   .hero { padding: 56px 0 40px; }
   h1 { font-size: clamp(38px, 8vw, 60px); line-height: 1.05; letter-spacing: -.025em; margin: 0 0 18px; font-weight: 800; }
   h1 span { color: var(--accent); }
-  .lede { font-size: 20px; color: var(--muted); margin: 0 0 32px; max-width: 560px; }
+  h1 .kicker { display: block; color: var(--accent); font-size: 15px; line-height: 1.4; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; margin-bottom: 16px; }
+  .lede { font-size: 20px; color: var(--muted); margin: 0 0 32px; max-width: 580px; }
   .cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
   .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #000; font-weight: 700; padding: 15px 22px; border-radius: 16px; text-decoration: none; font-size: 17px; border: 0; cursor: pointer; }
   .btn svg { width: 22px; height: 22px; }
@@ -39,68 +63,205 @@
   .demo .phone small { color: var(--faint); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
   .demo .phone strong { font-size: 30px; font-variant-numeric: tabular-nums; font-weight: 700; }
   .demo .phone strong em { color: var(--accent); font-style: normal; }
-  .demo .phone .sub { font-size: 15px; color: var(--muted); }
+  .demo .phone .sub { font-size: 15px; color: var(--muted); margin: 0; }
   .demo .notif { display: flex; gap: 10px; align-items: center; background: var(--raised); border-radius: 12px; padding: 10px 12px; font-size: 14px; }
   .demo .notif b { display: block; }
   .demo .notif .tap { margin-left: auto; background: var(--accent); color: #000; font-weight: 700; padding: 6px 10px; border-radius: 10px; white-space: nowrap; }
   section { padding: 48px 0; border-top: 1px solid var(--raised); }
-  h2 { font-size: 30px; letter-spacing: -.02em; margin: 0 0 8px; font-weight: 800; }
+  h2 { font-size: 30px; letter-spacing: -.02em; margin: 0 0 8px; font-weight: 800; line-height: 1.15; }
+  h3 { font-size: 18px; margin: 0 0 4px; font-weight: 700; }
   .sub { color: var(--muted); margin: 0 0 28px; }
-  .steps { display: grid; gap: 14px; }
+  .steps { display: grid; gap: 14px; list-style: none; margin: 0; padding: 0; }
   .step { display: flex; gap: 16px; background: var(--surface); border-radius: var(--radius); padding: 20px; }
   .step .n { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #000; font-weight: 800; display: grid; place-items: center; }
-  .step b { display: block; margin-bottom: 4px; font-size: 18px; }
   .step p { margin: 0; color: var(--muted); }
-  .big { font-size: clamp(56px, 14vw, 96px); font-weight: 800; line-height: 1; letter-spacing: -.03em; color: var(--danger); }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 0; padding: 0; list-style: none; }
+  .shots figure { margin: 0; }
+  .shots img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--raised); background: var(--surface); }
+  .shots figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; line-height: 1.4; }
+  .big { font-size: clamp(56px, 14vw, 96px); font-weight: 800; line-height: 1; letter-spacing: -.03em; color: var(--danger); margin: 0; }
   .big.ok { color: var(--accent); }
   .big.warn { color: var(--warn); font-size: clamp(40px, 10vw, 64px); }
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .card { background: var(--surface); border-radius: var(--radius); padding: 22px; }
   .card p { margin: 6px 0 0; color: var(--muted); }
-  .price { display: flex; align-items: baseline; gap: 8px; }
+  .price { display: flex; align-items: baseline; gap: 8px; margin: 0; font-size: 17px; font-weight: 400; }
   .price b { font-size: 40px; font-weight: 800; letter-spacing: -.02em; }
   .price span { color: var(--muted); }
+  .guides { display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; }
+  .guides a { display: block; background: var(--surface); border-radius: 16px; padding: 18px 20px; text-decoration: none; }
+  .guides a b { display: block; color: var(--accent); }
+  .guides a span { color: var(--muted); font-size: 15px; }
   details { background: var(--surface); border-radius: 16px; padding: 4px 20px; margin-bottom: 10px; }
-  summary { cursor: pointer; padding: 14px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; }
+  summary { cursor: pointer; padding: 14px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary h3 { font-size: 17px; font-weight: 600; margin: 0; }
   summary::after { content: "+"; color: var(--accent); font-weight: 700; }
   details[open] summary::after { content: "–"; }
   details p { margin: 0 0 16px; color: var(--muted); }
   .help { font-size: 14px; color: var(--faint); margin-top: 24px; }
+  .final { text-align: center; }
+  .final .cta-row { justify-content: center; }
   footer { padding: 40px 0 60px; color: var(--faint); font-size: 14px; border-top: 1px solid var(--raised); }
-  footer a { color: var(--faint); margin-right: 18px; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+  footer a { color: var(--faint); }
+  footer a:hover { color: var(--fg); }
   @media (max-width: 560px) {
     .demo, .grid2 { grid-template-columns: 1fr; }
-    nav a { margin-left: 14px; }
+    .shots { grid-template-columns: 1fr 1fr; }
+    header nav a { margin-left: 14px; }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://usedamp.app/#org",
+      "name": "Damp",
+      "url": "https://usedamp.app/",
+      "logo": "https://usedamp.app/icon-512.png",
+      "email": "support@usedamp.app",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "support@usedamp.app"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://usedamp.app/#website",
+      "name": "Damp",
+      "url": "https://usedamp.app/",
+      "description": "Damp is a drink less app for iPhone: dry nights, money kept, one tap a night.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://usedamp.app/#org" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://usedamp.app/#app",
+      "name": "Damp: Drink Less Tracker",
+      "alternateName": "Damp",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "description": "Damp is a drink less tracker for iPhone. A nightly check-in asks \"Dry tonight?\" and one tap logs it. Damp counts your dry nights in a row, this week against your goal, and the money you kept, based on your own numbers. No account.",
+      "url": "https://usedamp.app/",
+      "image": "https://usedamp.app/og.png",
+      "screenshot": [
+        "https://usedamp.app/screenshots/small-home.png",
+        "https://usedamp.app/screenshots/small-reveal.png",
+        "https://usedamp.app/screenshots/small-log.png",
+        "https://usedamp.app/screenshots/small-milestone.png"
+      ],
+      "publisher": { "@id": "https://usedamp.app/#org" },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Yearly",
+          "description": "Yearly subscription with a 7-day free trial.",
+          "price": "29.99",
+          "priceCurrency": "USD",
+          "category": "subscription"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly",
+          "description": "Monthly subscription.",
+          "price": "5.99",
+          "priceCurrency": "USD",
+          "category": "subscription"
+        },
+        {
+          "@type": "Offer",
+          "name": "Lifetime",
+          "description": "One-time purchase.",
+          "price": "49.99",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I have to quit drinking to use Damp?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Damp is for drinking less, not never. You pick a goal of 3, 4, 5 or 7 dry nights a week. If you're stopping completely, 7 works for that too. Either way, a drinking night is a number, not a failure." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I forget to log a night?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The next morning the home screen asks \"Forgot last night?\" with two buttons. Nights you never log don't count either way; they don't break your streak and they don't add to it." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is \"money kept\" calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You tell Damp your usual drinks per week and what a drink costs you. Every logged night is compared to that baseline. A dry night keeps a night's worth; a lighter night keeps the difference. It's your numbers, so it's as honest as you are." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Damp for Dry January or Sober October?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set your goal to 7 dry nights a week for the month and tap once a night. If you have a drink partway through, your streak resets, but your dry-night count, your savings and your history stay. The month still counts." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Damp cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The yearly plan is $29.99 and starts with a 7-day free trial. Monthly is $5.99. Lifetime is $49.99, paid once. Purchases go through Apple, and you can cancel a subscription any time in Settings on your iPhone." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it see what I drink or where?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. It knows what you tap and nothing else. There's no account and no server." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this medical advice?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Damp is a habit tracker. If drinking feels out of control, please talk to a doctor. In the US, SAMHSA's free, confidential helpline is 1-800-662-4357." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an Android version?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not yet. If enough people ask at hello@usedamp.app, it moves up the list." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
   <header>
-    <a class="logo" href="/">
+    <a class="logo" href="/" aria-label="Damp home">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1c2129"/><path d="M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z" fill="#7de8b8"/></svg>
       Damp
     </a>
-    <nav>
+    <nav aria-label="Primary">
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
   </header>
 
+  <main id="main">
   <section class="hero" style="border:0">
-    <h1>Drink less.<br><span>Not never.</span></h1>
-    <p class="lede">Damp counts your dry nights, the money you kept and the mornings you woke up clear. One tap a night, from the notification. No account, no coach, no judgment.</p>
+    <h1><span class="kicker">The drink less app for iPhone</span>Drink less.<br><span>Not never.</span></h1>
+    <p class="lede">Damp is a dry days tracker for people who want to cut back on drinking without quitting. It counts your dry nights, the money you kept and the mornings you woke up clear. One tap a night, from the notification. No account, no coach, no judgment.</p>
     <div class="cta-row">
-      <!-- Swap: set APP_STORE_URL below once the listing is live. The button updates itself. -->
-      <a class="btn" id="store-btn" href="mailto:hello@usedamp.app?subject=Damp%20early%20access&body=Send%20me%20the%20TestFlight%20link.">
+      <!-- Swap: set APP_STORE_URL at the bottom of this file once the listing is live. Every store button updates itself. -->
+      <a class="btn" data-store-btn href="mailto:hello@usedamp.app?subject=Damp%20early%20access&body=Send%20me%20the%20TestFlight%20link.">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.9-4zM14 5.2c.7-.8 1.2-2 1-3.2-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3.1 1.1.1 2.3-.6 3-1.4z"/></svg>
-        <span id="store-label">Get early access</span>
+        <span data-store-label>Get early access to Damp</span>
       </a>
-      <span class="pill" id="store-note">On the App Store for Sober October.</span>
+      <span class="pill" data-store-note>On the App Store this October.</span>
     </div>
 
-    <div class="demo" aria-label="What a night looks like">
+    <div class="demo" role="group" aria-label="What a night looks like">
       <div class="phone">
         <small>9:00 PM · lock screen</small>
         <div class="notif"><div><b>Dry tonight?</b>One tap. Your streak and your savings are waiting.</div><span class="tap">Dry ✓</span></div>
@@ -108,40 +269,63 @@
       <div class="phone">
         <small>Home</small>
         <strong><em>12</em> dry nights in a row</strong>
-        <div class="sub">$137 kept · 1,800 cal skipped · 4 of 4 this week</div>
+        <p class="sub">$137 kept · 1,800 cal skipped · 4 of 4 this week</p>
       </div>
     </div>
   </section>
 
   <section id="how">
-    <h2>How it works</h2>
+    <h2>How the dry nights tracker works</h2>
     <p class="sub">One question a night. That's the whole habit.</p>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><div><b>Tell it your number, once.</b><p>How many drinks a week, what they cost you, and how many dry nights you want. Damp turns that into money and mornings, in your numbers, not ours.</p></div></div>
-      <div class="step"><div class="n">2</div><div><b>Tap once a night.</b><p>At 9pm (or whenever you pick) your phone asks "Dry tonight?" Tap Dry right from the notification. Had a drink? Tap that and say how many. No guilt screen.</p></div></div>
-      <div class="step"><div class="n">3</div><div><b>Watch it add up.</b><p>A streak of dry nights, this week against your goal, the money you kept. A card at 1, 3, 7, 14, 30, 60, 100 and 365 nights. Post it or don't.</p></div></div>
-    </div>
+    <ol class="steps">
+      <li class="step"><div class="n" aria-hidden="true">1</div><div><h3>Tell it your number, once.</h3><p>How many drinks a week, what they cost you, and how many dry nights you want. Damp turns that into money and mornings, in your numbers, not ours.</p></div></li>
+      <li class="step"><div class="n" aria-hidden="true">2</div><div><h3>Tap once a night.</h3><p>At 9pm (or whenever you pick) your phone asks "Dry tonight?" Tap Dry right from the notification. Had a drink? Tap that and say how many. No guilt screen.</p></div></li>
+      <li class="step"><div class="n" aria-hidden="true">3</div><div><h3>Watch it add up.</h3><p>A streak of dry nights, this week against your goal, the money you kept. A card at 1, 3, 7, 14, 30, 60, 100 and 365 nights. Post it or don't.</p></div></li>
+    </ol>
   </section>
 
-  <section>
-    <h2>What you get back</h2>
+  <section id="screens">
+    <h2>What Damp looks like</h2>
+    <p class="sub">Four screens do nearly all the work.</p>
+    <ul class="shots">
+      <li><figure>
+        <picture><source srcset="/screenshots/web-home.webp" type="image/webp"><img src="/screenshots/small-home.png" width="276" height="600" loading="lazy" decoding="async" alt="Damp home screen showing 12 dry nights in a row, $120 kept, 4 of 4 dry nights this week and a large Tonight's dry button"></picture>
+        <figcaption>Home: your streak, your week, one button.</figcaption>
+      </figure></li>
+      <li><figure>
+        <picture><source srcset="/screenshots/web-reveal.webp" type="image/webp"><img src="/screenshots/small-reveal.png" width="276" height="600" loading="lazy" decoding="async" alt="Damp setup screen: at 10 drinks a week you spend $4,160 a year on alcohol, and 4 dry nights a week gives you $2,377 of it back"></picture>
+        <figcaption>Setup: what your drinking costs, in your numbers.</figcaption>
+      </figure></li>
+      <li><figure>
+        <picture><source srcset="/screenshots/web-log.webp" type="image/webp"><img src="/screenshots/small-log.png" width="276" height="600" loading="lazy" decoding="async" alt="Damp drinks log sheet asking How many tonight, with 2 selected and a Log 2 drinks button"></picture>
+        <figcaption>Had a drink? Say how many. That's it.</figcaption>
+      </figure></li>
+      <li><figure>
+        <picture><source srcset="/screenshots/web-milestone.webp" type="image/webp"><img src="/screenshots/small-milestone.png" width="276" height="600" loading="lazy" decoding="async" alt="Damp milestone card for 7 dry nights in a row and $80 kept, with Share the card and Keep going buttons"></picture>
+        <figcaption>A card at every milestone. Share it or keep it.</figcaption>
+      </figure></li>
+    </ul>
+  </section>
+
+  <section id="numbers">
+    <h2>What you get back when you cut back on drinking</h2>
     <p class="sub">At 10 drinks a week and $8 a drink, that's</p>
-    <div class="big">$4,160</div>
+    <p class="big">$4,160</p>
     <p class="sub" style="margin-top:6px">a year on alcohol. In calories, that's</p>
-    <div class="big warn">39 days of food</div>
+    <p class="big warn">39 days of food</p>
     <p class="sub" style="margin-top:6px">Four dry nights a week gives you</p>
-    <div class="big ok">$2,377</div>
-    <p class="sub" style="margin-top:6px">of it back. Every year. Plus the mornings.</p>
+    <p class="big ok">$2,377</p>
+    <p class="sub" style="margin-top:6px">of it back. Every year. Plus the mornings. <a href="/drinking-cost-calculator.html">Run it with your own numbers</a>.</p>
   </section>
 
-  <section>
-    <h2>Not a sobriety app</h2>
-    <p class="sub">Every app in this category sells quitting. Most people just want fewer nights and less regret. That's the damp lifestyle, and this is the app for it.</p>
+  <section id="why">
+    <h2>An alcohol tracker without quitting</h2>
+    <p class="sub">Most apps in this category are built around stopping for good. Most people just want fewer nights and less regret. That's <a href="/damp-lifestyle.html">the damp lifestyle</a>, and this is the app for it.</p>
     <div class="grid2">
-      <div class="card"><b>A drinking night is a number.</b><p>Not a relapse, not day one again. Your streak resets. Your savings and your history stay.</p></div>
-      <div class="card"><b>Nights, not drinks.</b><p>Logging every unit is a chore you'll quit by week two. A dry night is one tap, and one tap is a streak.</p></div>
-      <div class="card"><b>No coach, no course, no community.</b><p>Just the loop. If you want a text coach there are apps for that at three times the price.</p></div>
-      <div class="card"><b>Nothing leaves your phone.</b><p>No account. No cloud. What you tap is nobody's business. <a href="privacy.html">Privacy policy</a>.</p></div>
+      <div class="card"><h3>A drinking night is a number.</h3><p>Not a failure, not day one again. Your streak resets. Your savings and your history stay.</p></div>
+      <div class="card"><h3>Nights, not drinks.</h3><p>Logging every unit is a chore you'll quit by week two. A dry night is one tap, and one tap is a streak.</p></div>
+      <div class="card"><h3>No coach, no course, no community.</h3><p>Just the loop. If you want a text coach there are apps for that at three times the price.</p></div>
+      <div class="card"><h3>Good for a dry month too.</h3><p>Set the goal to 7 nights a week and it becomes a <a href="/dry-january-tracker.html">Dry January tracker</a>. Go back to 4 in February.</p></div>
     </div>
   </section>
 
@@ -149,43 +333,81 @@
     <h2>Pricing</h2>
     <p class="sub">Try it free for 7 days. Cancel any time. It costs less than three dry nights.</p>
     <div class="grid2">
-      <div class="card"><div class="price"><b>$29.99</b><span>/ year</span></div><p>About $2.50 a month. 7-day free trial. Best value.</p></div>
-      <div class="card"><div class="price"><b>$5.99</b><span>/ month</span></div><p>For trying it out one month at a time.</p></div>
-      <div class="card"><div class="price"><b>$49.99</b><span>once</span></div><p>Lifetime. For people who hate subscriptions.</p></div>
-      <div class="card"><b>Compare</b><p>Sunnyside and Reframe are about $100 a year. Damp does the part that works, for a third of that.</p></div>
+      <div class="card"><h3 class="price"><b>$29.99</b><span>/ year</span></h3><p>About $2.50 a month. 7-day free trial. Best value.</p></div>
+      <div class="card"><h3 class="price"><b>$5.99</b><span>/ month</span></h3><p>For trying it out one month at a time.</p></div>
+      <div class="card"><h3 class="price"><b>$49.99</b><span>once</span></h3><p>Lifetime. For people who hate subscriptions.</p></div>
+      <div class="card"><h3>Compare</h3><p>Sunnyside and Reframe are about $100 a year. Damp does the part that works, for a third of that.</p></div>
     </div>
+  </section>
+
+  <section id="privacy">
+    <h2>Private by design</h2>
+    <p class="sub">What you tap is nobody's business.</p>
+    <div class="grid2">
+      <div class="card"><h3>No account. No server.</h3><p>There's no sign-in and nothing to sync. Your nights, your numbers and your reasons stay on your iPhone and are deleted when you delete the app.</p></div>
+      <div class="card"><h3>Nothing about you.</h3><p>Damp may record anonymous usage events, like "night logged", to improve the app. Never the numbers you enter, never anything tied to you. No ad identifiers, no data sales. <a href="/privacy.html">Read the privacy policy</a>.</p></div>
+    </div>
+  </section>
+
+  <section id="guides">
+    <h2>Guides</h2>
+    <p class="sub">Short reads on drinking less, without the lecture.</p>
+    <ul class="guides">
+      <li><a href="/damp-lifestyle.html"><b>What is damp drinking?</b><span>The damp lifestyle, explained: what it means and how people actually do it.</span></a></li>
+      <li><a href="/drinking-cost-calculator.html"><b>Drinking cost calculator</b><span>What your drinks cost a year, and what a few dry nights a week gives back.</span></a></li>
+      <li><a href="/dry-january-tracker.html"><b>Dry January and Sober October tracker</b><span>How to track a dry month so that one drink doesn't end it.</span></a></li>
+    </ul>
   </section>
 
   <section id="faq">
     <h2>Questions</h2>
-    <p class="sub"></p>
-    <details><summary>Is this a sobriety app?</summary><p>No. Damp is for drinking less. If you're quitting completely, set your goal to 7 dry nights a week and it works for that too, but it will never call a drink a relapse.</p></details>
-    <details><summary>What if I forget to log a night?</summary><p>The next morning the home screen asks "Forgot last night?" with two buttons. Nights you never log don't count either way; they don't break your streak and they don't add to it.</p></details>
-    <details><summary>How is "money kept" calculated?</summary><p>You tell Damp your usual drinks per week and what a drink costs you. Every logged night is compared to that baseline. A dry night keeps a night's worth; a lighter night keeps the difference. It's your numbers, so it's as honest as you are.</p></details>
-    <details><summary>Does it see what I drink or where?</summary><p>No. It knows what you tap and nothing else. There's no account and no server.</p></details>
-    <details><summary>Is this medical advice?</summary><p>No. Damp is a habit tracker. If drinking feels out of control, please talk to a doctor. In the US, SAMHSA's free, confidential helpline is 1-800-662-4357.</p></details>
-    <details><summary>Android?</summary><p>Not yet. If enough people ask at <a href="mailto:hello@usedamp.app">hello@usedamp.app</a>, it moves up the list.</p></details>
+    <p class="sub">The ones people ask before they download.</p>
+    <details><summary><h3>Do I have to quit drinking to use Damp?</h3></summary><p>No. Damp is for drinking less, not never. You pick a goal of 3, 4, 5 or 7 dry nights a week. If you're stopping completely, 7 works for that too. Either way, a drinking night is a number, not a failure.</p></details>
+    <details><summary><h3>What if I forget to log a night?</h3></summary><p>The next morning the home screen asks "Forgot last night?" with two buttons. Nights you never log don't count either way; they don't break your streak and they don't add to it.</p></details>
+    <details><summary><h3>How is "money kept" calculated?</h3></summary><p>You tell Damp your usual drinks per week and what a drink costs you. Every logged night is compared to that baseline. A dry night keeps a night's worth; a lighter night keeps the difference. It's your numbers, so it's as honest as you are.</p></details>
+    <details><summary><h3>Can I use Damp for Dry January or Sober October?</h3></summary><p>Yes. Set your goal to 7 dry nights a week for the month and tap once a night. If you have a drink partway through, your streak resets, but your dry-night count, your savings and your history stay. The month still counts.</p></details>
+    <details><summary><h3>How much does Damp cost?</h3></summary><p>The yearly plan is $29.99 and starts with a 7-day free trial. Monthly is $5.99. Lifetime is $49.99, paid once. Purchases go through Apple, and you can cancel a subscription any time in Settings on your iPhone.</p></details>
+    <details><summary><h3>Does it see what I drink or where?</h3></summary><p>No. It knows what you tap and nothing else. There's no account and no server.</p></details>
+    <details><summary><h3>Is this medical advice?</h3></summary><p>No. Damp is a habit tracker. If drinking feels out of control, please talk to a doctor. In the US, SAMHSA's free, confidential helpline is 1-800-662-4357.</p></details>
+    <details><summary><h3>Is there an Android version?</h3></summary><p>Not yet. If enough people ask at <a href="mailto:hello@usedamp.app">hello@usedamp.app</a>, it moves up the list.</p></details>
     <p class="help">Damp is not a substitute for professional help. If you or someone you know is struggling with alcohol, SAMHSA's National Helpline is free, confidential and open 24/7: 1-800-662-4357.</p>
   </section>
 
+  <section id="get" class="final">
+    <h2>Tonight can be the first one.</h2>
+    <p class="sub">Tell it your numbers once. After that it's one tap a night.</p>
+    <div class="cta-row">
+      <a class="btn" data-store-btn href="mailto:hello@usedamp.app?subject=Damp%20early%20access&body=Send%20me%20the%20TestFlight%20link.">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.9-4zM14 5.2c.7-.8 1.2-2 1-3.2-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3.1 1.1.1 2.3-.6 3-1.4z"/></svg>
+        <span data-store-label>Get early access to Damp</span>
+      </a>
+    </div>
+  </section>
+  </main>
+
   <footer>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="mailto:support@usedamp.app">Support</a>
-    <a href="mailto:hello@usedamp.app">Press &amp; creators</a>
+    <nav aria-label="Footer">
+      <a href="/">Damp home</a>
+      <a href="/damp-lifestyle.html">What is damp drinking?</a>
+      <a href="/drinking-cost-calculator.html">Drinking cost calculator</a>
+      <a href="/dry-january-tracker.html">Dry January tracker</a>
+      <a href="/privacy.html">Privacy policy</a>
+      <a href="/terms.html">Terms of use</a>
+      <a href="mailto:support@usedamp.app">Email support</a>
+      <a href="mailto:hello@usedamp.app">Press &amp; creators</a>
+    </nav>
     <div style="margin-top:14px">© 2026 Damp. Drink less. Not never.</div>
   </footer>
 </div>
 
 <script>
   // Once the App Store listing exists, paste its URL here (looks like https://apps.apple.com/app/id123456789).
-  // The button switches from "Get early access" to "Download on the App Store" automatically.
+  // Every store button switches from "Get early access" to "Download on the App Store" automatically.
   var APP_STORE_URL = "";
   if (APP_STORE_URL) {
-    var b = document.getElementById("store-btn");
-    b.href = APP_STORE_URL;
-    document.getElementById("store-label").textContent = "Download on the App Store";
-    document.getElementById("store-note").textContent = "Free for 7 days.";
+    document.querySelectorAll("[data-store-btn]").forEach(function (b) { b.href = APP_STORE_URL; b.rel = "noopener"; });
+    document.querySelectorAll("[data-store-label]").forEach(function (l) { l.textContent = "Download Damp on the App Store"; });
+    document.querySelectorAll("[data-store-note]").forEach(function (n) { n.textContent = "Free for 7 days."; });
   }
 </script>
 </body>

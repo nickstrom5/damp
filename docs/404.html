@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | Damp</title>
+<meta name="description" content="This page doesn&#x27;t exist. Head back to Damp, the drink less tracker for iPhone.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#0f121a">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f121a'/%3E%3Cpath d='M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z' fill='%237de8b8'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  :root {
+    --bg: #0f121a; --surface: #1c2129; --raised: #29303d;
+    --fg: #fff; --muted: rgba(255,255,255,.72); --faint: rgba(255,255,255,.6);
+    --accent: #7de8b8; --danger: #fa7366; --warn: #fac761;
+    --radius: 20px;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  main a { color: var(--accent); }
+  a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #000; padding: 10px 14px; border-radius: 0 0 10px 0; font-weight: 700; }
+  .skip:focus { left: 0; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
+  header nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  header nav a:hover { color: var(--fg); }
+  .crumbs { font-size: 14px; color: var(--faint); margin: 24px 0 0; }
+  .crumbs a { color: var(--faint); }
+  h1 { font-size: clamp(32px, 6.5vw, 46px); line-height: 1.1; letter-spacing: -.025em; margin: 14px 0 18px; font-weight: 800; }
+  .lede { font-size: 20px; color: var(--muted); margin: 0 0 12px; }
+  h2 { font-size: 26px; letter-spacing: -.02em; margin: 44px 0 10px; font-weight: 800; line-height: 1.2; }
+  h3 { font-size: 18px; margin: 24px 0 4px; }
+  main p, main li { color: var(--muted); }
+  main li { margin-bottom: 8px; }
+  main strong { color: var(--fg); }
+  .card { background: var(--surface); border-radius: var(--radius); padding: 22px; margin: 28px 0; }
+  .card h2 { margin-top: 0; font-size: 22px; }
+  .card p:last-child { margin-bottom: 0; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #000 !important; font-weight: 700; padding: 13px 20px; border-radius: 16px; text-decoration: none; font-size: 17px; }
+  .help { font-size: 14px; color: var(--faint) !important; margin-top: 36px; }
+  .calc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 20px; }
+  .calc label { display: block; font-size: 14px; color: var(--muted); }
+  .calc input, .calc select { display: block; width: 100%; margin-top: 6px; background: var(--bg); color: var(--fg); border: 1px solid var(--raised); border-radius: 12px; padding: 12px; font: inherit; font-variant-numeric: tabular-nums; }
+  .out { display: grid; gap: 14px; }
+  .out p { margin: 0; }
+  .out b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -.02em; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .out .spend b { color: var(--danger); } .out .food b { color: var(--warn); } .out .back b { color: var(--accent); }
+  footer { margin-top: 56px; padding: 40px 0 60px; color: var(--faint); font-size: 14px; border-top: 1px solid var(--raised); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+  footer a { color: var(--faint); }
+  footer a:hover { color: var(--fg); }
+  footer .copy { margin-top: 14px; }
+  @media (max-width: 560px) { .calc { grid-template-columns: 1fr; } header nav a { margin-left: 14px; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/" aria-label="Damp home">
+      <svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1c2129"/><path d="M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z" fill="#7de8b8"/></svg>
+      Damp
+    </a>
+    <nav aria-label="Primary">
+      <a href="/#how">How it works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+  </header>
+  <main id="main">
+    <h1>Nothing here. <span style="color:var(--accent)">Not even a drink.</span></h1>
+    <p class="lede">That page doesn't exist, or it moved.</p>
+    <p><a class="btn" href="/">Back to the Damp home page</a></p>
+  </main>
+  <footer>
+    <nav aria-label="Footer">
+      <a href="/">Damp home</a>
+      <a href="/damp-lifestyle.html">What is damp drinking?</a>
+      <a href="/drinking-cost-calculator.html">Drinking cost calculator</a>
+      <a href="/dry-january-tracker.html">Dry January tracker</a>
+      <a href="/privacy.html">Privacy policy</a>
+      <a href="/terms.html">Terms of use</a>
+      <a href="mailto:support@usedamp.app">Email support</a>
+      <a href="mailto:hello@usedamp.app">Press &amp; creators</a>
+    </nav>
+    <div class="copy">© 2026 Damp. Drink less. Not never.</div>
+  </footer>
+</div>
+</body>
+</html>
