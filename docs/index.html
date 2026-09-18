@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Damp – Drink less. Not never.</title>
+<meta name="description" content="Damp counts your dry nights, the money you kept and the mornings you woke up clear. One tap a night. No account, no coach, no judgment.">
+<meta property="og:title" content="Damp – Drink less. Not never.">
+<meta property="og:description" content="One tap a night. A streak, the money you didn't spend, a card at every milestone.">
+<meta property="og:url" content="https://getdamp.app/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f121a'/%3E%3Cpath d='M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z' fill='%237de8b8'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0f121a; --surface: #1c2129; --raised: #29303d;
+    --fg: #fff; --muted: rgba(255,255,255,.62); --faint: rgba(255,255,255,.38);
+    --accent: #7de8b8; --danger: #fa7366; --warn: #fac761;
+    --radius: 20px;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
+  .logo svg { width: 28px; height: 28px; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  .hero { padding: 56px 0 40px; }
+  h1 { font-size: clamp(38px, 8vw, 60px); line-height: 1.05; letter-spacing: -.025em; margin: 0 0 18px; font-weight: 800; }
+  h1 span { color: var(--accent); }
+  .lede { font-size: 20px; color: var(--muted); margin: 0 0 32px; max-width: 560px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #000; font-weight: 700; padding: 15px 22px; border-radius: 16px; text-decoration: none; font-size: 17px; border: 0; cursor: pointer; }
+  .btn svg { width: 22px; height: 22px; }
+  .pill { font-size: 14px; color: var(--faint); }
+  .demo { margin: 48px 0 8px; background: var(--surface); border-radius: var(--radius); padding: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .demo .phone { background: var(--bg); border-radius: 18px; padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; }
+  .demo .phone small { color: var(--faint); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+  .demo .phone strong { font-size: 30px; font-variant-numeric: tabular-nums; font-weight: 700; }
+  .demo .phone strong em { color: var(--accent); font-style: normal; }
+  .demo .phone .sub { font-size: 15px; color: var(--muted); }
+  .demo .notif { display: flex; gap: 10px; align-items: center; background: var(--raised); border-radius: 12px; padding: 10px 12px; font-size: 14px; }
+  .demo .notif b { display: block; }
+  .demo .notif .tap { margin-left: auto; background: var(--accent); color: #000; font-weight: 700; padding: 6px 10px; border-radius: 10px; white-space: nowrap; }
+  section { padding: 48px 0; border-top: 1px solid var(--raised); }
+  h2 { font-size: 30px; letter-spacing: -.02em; margin: 0 0 8px; font-weight: 800; }
+  .sub { color: var(--muted); margin: 0 0 28px; }
+  .steps { display: grid; gap: 14px; }
+  .step { display: flex; gap: 16px; background: var(--surface); border-radius: var(--radius); padding: 20px; }
+  .step .n { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #000; font-weight: 800; display: grid; place-items: center; }
+  .step b { display: block; margin-bottom: 4px; font-size: 18px; }
+  .step p { margin: 0; color: var(--muted); }
+  .big { font-size: clamp(56px, 14vw, 96px); font-weight: 800; line-height: 1; letter-spacing: -.03em; color: var(--danger); }
+  .big.ok { color: var(--accent); }
+  .big.warn { color: var(--warn); font-size: clamp(40px, 10vw, 64px); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card { background: var(--surface); border-radius: var(--radius); padding: 22px; }
+  .card p { margin: 6px 0 0; color: var(--muted); }
+  .price { display: flex; align-items: baseline; gap: 8px; }
+  .price b { font-size: 40px; font-weight: 800; letter-spacing: -.02em; }
+  .price span { color: var(--muted); }
+  details { background: var(--surface); border-radius: 16px; padding: 4px 20px; margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 14px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; }
+  summary::after { content: "+"; color: var(--accent); font-weight: 700; }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 0 0 16px; color: var(--muted); }
+  .help { font-size: 14px; color: var(--faint); margin-top: 24px; }
+  footer { padding: 40px 0 60px; color: var(--faint); font-size: 14px; border-top: 1px solid var(--raised); }
+  footer a { color: var(--faint); margin-right: 18px; }
+  @media (max-width: 560px) {
+    .demo, .grid2 { grid-template-columns: 1fr; }
+    nav a { margin-left: 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1c2129"/><path d="M32 10c8 12 14 19 14 28a14 14 0 0 1-28 0c0-9 6-16 14-28z" fill="#7de8b8"/></svg>
+      Damp
+    </a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="border:0">
+    <h1>Drink less.<br><span>Not never.</span></h1>
+    <p class="lede">Damp counts your dry nights, the money you kept and the mornings you woke up clear. One tap a night, from the notification. No account, no coach, no judgment.</p>
+    <div class="cta-row">
+      <!-- Swap: set APP_STORE_URL below once the listing is live. The button updates itself. -->
+      <a class="btn" id="store-btn" href="mailto:hello@getdamp.app?subject=Damp%20early%20access&body=Send%20me%20the%20TestFlight%20link.">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.9-4zM14 5.2c.7-.8 1.2-2 1-3.2-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3.1 1.1.1 2.3-.6 3-1.4z"/></svg>
+        <span id="store-label">Get early access</span>
+      </a>
+      <span class="pill" id="store-note">On the App Store for Sober October.</span>
+    </div>
+
+    <div class="demo" aria-label="What a night looks like">
+      <div class="phone">
+        <small>9:00 PM · lock screen</small>
+        <div class="notif"><div><b>Dry tonight?</b>One tap. Your streak and your savings are waiting.</div><span class="tap">Dry ✓</span></div>
+      </div>
+      <div class="phone">
+        <small>Home</small>
+        <strong><em>12</em> dry nights in a row</strong>
+        <div class="sub">$137 kept · 1,800 cal skipped · 4 of 4 this week</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <p class="sub">One question a night. That's the whole habit.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><b>Tell it your number, once.</b><p>How many drinks a week, what they cost you, and how many dry nights you want. Damp turns that into money and mornings, in your numbers, not ours.</p></div></div>
+      <div class="step"><div class="n">2</div><div><b>Tap once a night.</b><p>At 9pm (or whenever you pick) your phone asks "Dry tonight?" Tap Dry right from the notification. Had a drink? Tap that and say how many. No guilt screen.</p></div></div>
+      <div class="step"><div class="n">3</div><div><b>Watch it add up.</b><p>A streak of dry nights, this week against your goal, the money you kept. A card at 1, 3, 7, 14, 30, 60, 100 and 365 nights. Post it or don't.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What you get back</h2>
+    <p class="sub">At 10 drinks a week and $8 a drink, that's</p>
+    <div class="big">$4,160</div>
+    <p class="sub" style="margin-top:6px">a year on alcohol. In calories, that's</p>
+    <div class="big warn">39 days of food</div>
+    <p class="sub" style="margin-top:6px">Four dry nights a week gives you</p>
+    <div class="big ok">$2,377</div>
+    <p class="sub" style="margin-top:6px">of it back. Every year. Plus the mornings.</p>
+  </section>
+
+  <section>
+    <h2>Not a sobriety app</h2>
+    <p class="sub">Every app in this category sells quitting. Most people just want fewer nights and less regret. That's the damp lifestyle, and this is the app for it.</p>
+    <div class="grid2">
+      <div class="card"><b>A drinking night is a number.</b><p>Not a relapse, not day one again. Your streak resets. Your savings and your history stay.</p></div>
+      <div class="card"><b>Nights, not drinks.</b><p>Logging every unit is a chore you'll quit by week two. A dry night is one tap, and one tap is a streak.</p></div>
+      <div class="card"><b>No coach, no course, no community.</b><p>Just the loop. If you want a text coach there are apps for that at three times the price.</p></div>
+      <div class="card"><b>Nothing leaves your phone.</b><p>No account. No cloud. What you tap is nobody's business. <a href="privacy.html">Privacy policy</a>.</p></div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <p class="sub">Try it free for 7 days. Cancel any time. It costs less than three dry nights.</p>
+    <div class="grid2">
+      <div class="card"><div class="price"><b>$29.99</b><span>/ year</span></div><p>About $2.50 a month. 7-day free trial. Best value.</p></div>
+      <div class="card"><div class="price"><b>$5.99</b><span>/ month</span></div><p>For trying it out one month at a time.</p></div>
+      <div class="card"><div class="price"><b>$49.99</b><span>once</span></div><p>Lifetime. For people who hate subscriptions.</p></div>
+      <div class="card"><b>Compare</b><p>Sunnyside and Reframe are about $100 a year. Damp does the part that works, for a third of that.</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Questions</h2>
+    <p class="sub"></p>
+    <details><summary>Is this a sobriety app?</summary><p>No. Damp is for drinking less. If you're quitting completely, set your goal to 7 dry nights a week and it works for that too, but it will never call a drink a relapse.</p></details>
+    <details><summary>What if I forget to log a night?</summary><p>The next morning the home screen asks "Forgot last night?" with two buttons. Nights you never log don't count either way; they don't break your streak and they don't add to it.</p></details>
+    <details><summary>How is "money kept" calculated?</summary><p>You tell Damp your usual drinks per week and what a drink costs you. Every logged night is compared to that baseline. A dry night keeps a night's worth; a lighter night keeps the difference. It's your numbers, so it's as honest as you are.</p></details>
+    <details><summary>Does it see what I drink or where?</summary><p>No. It knows what you tap and nothing else. There's no account and no server.</p></details>
+    <details><summary>Is this medical advice?</summary><p>No. Damp is a habit tracker. If drinking feels out of control, please talk to a doctor. In the US, SAMHSA's free, confidential helpline is 1-800-662-4357.</p></details>
+    <details><summary>Android?</summary><p>Not yet. If enough people ask at <a href="mailto:hello@getdamp.app">hello@getdamp.app</a>, it moves up the list.</p></details>
+    <p class="help">Damp is not a substitute for professional help. If you or someone you know is struggling with alcohol, SAMHSA's National Helpline is free, confidential and open 24/7: 1-800-662-4357.</p>
+  </section>
+
+  <footer>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="mailto:support@getdamp.app">Support</a>
+    <a href="mailto:hello@getdamp.app">Press &amp; creators</a>
+    <div style="margin-top:14px">© 2026 Damp. Drink less. Not never.</div>
+  </footer>
+</div>
+
+<script>
+  // Once the App Store listing exists, paste its URL here (looks like https://apps.apple.com/app/id123456789).
+  // The button switches from "Get early access" to "Download on the App Store" automatically.
+  var APP_STORE_URL = "";
+  if (APP_STORE_URL) {
+    var b = document.getElementById("store-btn");
+    b.href = APP_STORE_URL;
+    document.getElementById("store-label").textContent = "Download on the App Store";
+    document.getElementById("store-note").textContent = "Free for 7 days.";
+  }
+</script>
+</body>
+</html>
