@@ -1,9 +1,9 @@
 # Runbook: static site + custom domain + free support email for an iOS app
 
-Reusable for any app. Replace: `APP` (app name), `DOMAIN` (e.g. getdamp.app), `GH_USER`
+Reusable for any app. Replace: `APP` (app name), `DOMAIN` (e.g. usedamp.app), `GH_USER`
 (GitHub username), `REPO` (repo name), `GMAIL` (the Gmail inbox that receives support mail).
 Cost: the domain only (~$15/yr for .app at Cloudflare). Everything else is free.
-For Damp: APP=Damp, DOMAIN=getdamp.app, GH_USER=nickstrom5.
+For Damp: APP=Damp, DOMAIN=usedamp.app, GH_USER=nickstrom5.
 
 ## 1. Domain
 - Buy DOMAIN at Cloudflare Registrar (dash.cloudflare.com → Domain Registration). At-cost
@@ -63,7 +63,7 @@ For Damp: APP=Damp, DOMAIN=getdamp.app, GH_USER=nickstrom5.
 ## 8. Use the URLs
 - App Store Connect: support URL `https://DOMAIN/`, privacy policy `https://DOMAIN/privacy.html`.
 - In-app: paywall footer and settings link to privacy.html and terms.html; feedback → support@DOMAIN.
-- Bundle ID convention: reverse of DOMAIN, e.g. `app.getdamp.APP` (extensions `.widgets`).
+- Bundle ID convention: reverse of DOMAIN, e.g. `app.usedamp.APP` (extensions `.widgets`).
 
 ## Gotchas
 - Orange (proxied) cloud on the A records means GitHub can never issue HTTPS. Must be grey.

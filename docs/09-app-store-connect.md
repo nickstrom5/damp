@@ -14,17 +14,17 @@ Create two App IDs, explicit (not wildcard):
 
 | Bundle ID | Description | Capabilities to tick |
 |---|---|---|
-| `app.getdamp.damp` | Damp | App Groups |
-| `app.getdamp.damp.widgets` | Damp Widgets | App Groups |
+| `app.usedamp.damp` | Damp | App Groups |
+| `app.usedamp.damp.widgets` | Damp Widgets | App Groups |
 
-Then Identifiers → App Groups → register `group.app.getdamp.damp`, and assign it to both
+Then Identifiers → App Groups → register `group.app.usedamp.damp`, and assign it to both
 App IDs (edit each App ID → App Groups → Configure). No special entitlements are needed.
 
 ## 3. Create the app record (App Store Connect → My Apps → +)
 
 - Platform: iOS. Name: **Damp** (this is the reserved App Store name; if it's taken, use
   "Damp: Drink Less"). Primary language: English (U.S.).
-- Bundle ID: `app.getdamp.damp`. SKU: `damp-ios`. User access: Full.
+- Bundle ID: `app.usedamp.damp`. SKU: `damp-ios`. User access: Full.
 
 ## 4. Agreements, tax and banking (App Store Connect → Business)
 
@@ -65,14 +65,14 @@ Answer honestly for the analytics setup in `Config.swift`:
   → "Analytics" purpose, **not** linked to identity, **not** used for tracking.
 - Health data: **not collected.** The drinks count never leaves the device and is not written
   to HealthKit. Say so in the review notes if asked.
-- Privacy policy URL: https://getdamp.app/privacy.html
+- Privacy policy URL: https://usedamp.app/privacy.html
 
 ## 7. App information
 
 - Category: Health & Fitness (primary), Lifestyle (secondary).
 - Age rating: questionnaire → Alcohol, Tobacco, or Drug Use or References: "Infrequent/Mild".
   Everything else "None". Expect 12+.
-- Support URL: https://getdamp.app/ Marketing URL: same.
+- Support URL: https://usedamp.app/ Marketing URL: same.
 - Copyright: 2026 <your name>.
 
 ## 8. Version 1.0 page

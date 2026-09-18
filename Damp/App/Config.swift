@@ -12,8 +12,8 @@ enum Config {
 
     static var analyticsEnabled: Bool { !postHogKey.isEmpty }
 
-    static let site = "https://getdamp.app"
+    static let site = "https://usedamp.app"
     static let privacyURL = URL(string: "\(site)/privacy.html")!
     static let termsURL = URL(string: "\(site)/terms.html")!
-    static let supportEmail = "support@getdamp.app"
+    static let supportEmail = "support@usedamp.app"
 }

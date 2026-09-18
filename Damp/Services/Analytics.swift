@@ -41,7 +41,7 @@ enum Analytics {
 }
 
 struct ConsoleAnalytics: AnalyticsSink {
-    private let log = Logger(subsystem: "app.getdamp.damp", category: "analytics")
+    private let log = Logger(subsystem: "app.usedamp.damp", category: "analytics")
 
     func track(_ event: AnalyticsEvent, _ properties: [String: Any]) {
         let props = properties.isEmpty ? "" : " \(properties)"

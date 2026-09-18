@@ -6,26 +6,26 @@ the copy and the schedule around them.
 
 ## 1. Handles to claim (in this order, today)
 
-Try `getdamp` first everywhere so the handle matches the domain. Fall back to `dampapp`, then
-`damp.app` / `drinkdamp`.
+Try `usedamp` first everywhere so the handle matches the domain. Fall back to `dampapp`, then
+`drinkdamp`.
 
 | Platform | Handle | Why it matters | Notes |
 |---|---|---|---|
-| TikTok | @getdamp | Primary channel. Every video goes here first. | Business account → can add the website link in bio from day one. |
-| Instagram | @getdamp | Reels get the same videos. Stories for the daily Sober October card. | Switch to Professional (Creator) account for link + insights. |
-| YouTube | @getdamp | Shorts. Longer shelf life than TikTok; ranks in Google for "sober october tracker". | Same vertical videos, posted as Shorts. |
-| X | @getdamp | Founders, press, indie-hacker audience. Build-in-public thread lives here. | |
-| Threads | @getdamp | Comes free with the Instagram account. Cross-post text. | |
-| Reddit | u/getdamp | Value-first posts. See section 7; r/stopdrinking bans promotion outright. | |
+| TikTok | @usedamp | Primary channel. Every video goes here first. | Business account → can add the website link in bio from day one. |
+| Instagram | @usedamp | Reels get the same videos. Stories for the daily Sober October card. | Switch to Professional (Creator) account for link + insights. |
+| YouTube | @usedamp | Shorts. Longer shelf life than TikTok; ranks in Google for "sober october tracker". | Same vertical videos, posted as Shorts. |
+| X | @usedamp | Founders, press, indie-hacker audience. Build-in-public thread lives here. | |
+| Threads | @usedamp | Comes free with the Instagram account. Cross-post text. | |
+| Reddit | u/usedamp | Value-first posts. See section 7; r/stopdrinking bans promotion outright. | |
 | Product Hunt | maker profile under your own name | Launch day listing. | Set up a personal maker account now; the product page comes at launch. |
 
-Also grab the email `press@getdamp.app` → it's covered by the catch-all already.
+Also grab the email `press@usedamp.app` → it's covered by the catch-all already.
 
 ## 2. Profile
 
 **Picture:** `docs/brand/profile-400.png` (the half-full drop on navy, padded for circular crops).
 **Banner (X, YouTube):** `docs/brand/banner-1500x500.png`.
-**Link:** `https://getdamp.app` everywhere. No Linktree; one link, one action.
+**Link:** `https://usedamp.app` everywhere. No Linktree; one link, one action.
 **Name field:** `Damp` on all platforms. Not "Damp App", not "Damp – Drink Less".
 
 **Bios (each fits its platform's limit):**
@@ -33,7 +33,7 @@ Also grab the email `press@getdamp.app` → it's covered by the catch-all alread
 - TikTok (80 chars): `Drink less. Not never. 💧 One tap a night. iPhone app, live for Sober October.`
 - Instagram (150 chars): `Drink less. Not never. 💧\nOne tap a night. A streak, the money you kept, a card every milestone.\nNo account, no coach, no judgment ↓`
 - X (160 chars): `Drink less, not never. One-tap dry-night tracker for iPhone. Counts nights, streaks and the money you didn't spend. Building in public. Live for Sober October.`
-- YouTube (1000 chars, use the short one): `Damp counts your dry nights, the money you kept and the mornings you woke up clear. One tap a night from the notification, a card at every milestone, nothing leaves your phone. Free 7-day trial, then $29.99/yr. getdamp.app`
+- YouTube (1000 chars, use the short one): `Damp counts your dry nights, the money you kept and the mornings you woke up clear. One tap a night from the notification, a card at every milestone, nothing leaves your phone. Free 7-day trial, then $29.99/yr. usedamp.app`
 - Threads: same as Instagram.
 - Reddit: `Building Damp, a one-tap dry-night tracker for iPhone. Not a sobriety app; a drink-less app.`
 
@@ -42,16 +42,16 @@ Also grab the email `press@getdamp.app` → it's covered by the catch-all alread
 Video #1 from the launch list (notification → tap Dry → streak and money tick). Caption:
 
 > One tap. That's the whole habit.
-> Damp counts dry nights, not drinks. Your streak, the money you didn't spend, a card every milestone. Drink less, not never. On iPhone for Sober October. getdamp.app for early access.
+> Damp counts dry nights, not drinks. Your streak, the money you didn't spend, a card every milestone. Drink less, not never. On iPhone for Sober October. usedamp.app for early access.
 > #soberoctober #damplifestyle #drinkless #mindfuldrinking #hangxiety
 
 ## 4. Two-week posting schedule (starts Sep 24, one week before Sober October)
 
-Two accounts on TikTok (main @getdamp, plus your personal account posting the founder angle).
+Two accounts on TikTok (main @usedamp, plus your personal account posting the founder angle).
 One video a day on each, same video to Reels and Shorts the same day. Post 8–10pm local,
 when the audience is deciding about tonight.
 
-| Day | @getdamp | Personal / founder |
+| Day | @usedamp | Personal / founder |
 |---|---|---|
 | 1 (Sep 24) | #1 The demo (pin it) | #10 "I built the drink-less app that doesn't make you quit" |
 | 2 | #2 The reveal | Story: your own honest number screenshot. "This is why." |
@@ -92,11 +92,11 @@ Hashtag set (pick 4–5 per post, don't paste all): `#soberoctober #dryjanuary #
 
 - "So it's just a counter?" → "Yep. A counter with a 9pm check-in you can answer without opening it, a streak, and the money in your own numbers. That's what makes people keep going."
 - "Why not I Am Sober?" → "Great app if you're quitting. Damp is for drinking less. A drinking night here is a number, not a relapse."
-- "Android?" → "Not yet. Email hello@getdamp.app and you'll be first to hear."
+- "Android?" → "Not yet. Email hello@usedamp.app and you'll be first to hear."
 - "Is this medical advice?" → "No. It's a habit tracker. If drinking feels out of control, please talk to a doctor; the app links SAMHSA's helpline in Settings."
 - "Does it know what I drink?" → "Only what you tap. No account, no cloud, nothing leaves your phone."
-- "Link?" → "getdamp.app" (never "link in bio")
-- "When?" → "Before Oct 1. Early access at getdamp.app."
+- "Link?" → "usedamp.app" (never "link in bio")
+- "When?" → "Before Oct 1. Early access at usedamp.app."
 
 ## 7. Reddit (value first, product second)
 

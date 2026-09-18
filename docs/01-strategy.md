@@ -54,6 +54,7 @@ Ship for October to learn. Optimise for January to earn.
 | Reframe ($99.99/yr) | Neuroscience course content, community | Billing complaints, upsells, heavy | No courses, no upsells, no account. Cancel in Settings like any app. |
 | I Am Sober (free + $10/mo) | Sobriety streak, community | Abstinence-only; drinking once is "relapse" | A drinking night is a number, not a failure. Streak resets, savings don't. |
 | Try Dry / Drinkaware (free) | Free, charity-backed | UK-focused, dated, no habit loop | Notification with tap-to-log, milestone cards, widget. |
+| Dry: A Drink Tracking App (free) | Same dry/drank model, private, no subscription | No check-in notification loop, no money number, no cards, no distribution | Same honesty, plus the loop that keeps people logging and the card that spreads it. |
 | Drylendar, Less, Tipple (small) | Simple | Small, no distribution | We out-distribute on short-form; same simplicity. |
 
 **One-line differentiation:** Damp is the simplest way to drink less on iOS. Tell it your
