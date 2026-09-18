@@ -77,7 +77,7 @@ Answer honestly for the analytics setup in `Config.swift`:
 
 ## 8. Version 1.0 page
 
-Paste from `docs/06-app-store-listing.md`: subtitle, promotional text, description, keywords.
+Paste from `playbook/06-app-store-listing.md`: subtitle, promotional text, description, keywords.
 Upload the six screenshots (6.9-inch required; Apple scales down for smaller phones).
 App Review Information: contact details, and the review notes from the listing doc. No
 sign-in required.

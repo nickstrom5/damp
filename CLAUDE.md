@@ -1,6 +1,6 @@
 # Damp — notes for Claude Code sessions
 
-iOS app (SwiftUI, iOS 17+). Read `README.md` and `docs/01-strategy.md` first.
+iOS app (SwiftUI, iOS 17+). Read `README.md` and `playbook/01-strategy.md` first.
 
 ## Build
 - The Xcode project is **generated**: `xcodegen generate` (brew install xcodegen). Never commit `Damp.xcodeproj`.
@@ -23,9 +23,13 @@ iOS app (SwiftUI, iOS 17+). Read `README.md` and `docs/01-strategy.md` first.
 
 ## Conventions
 - One core loop, no feature creep: onboarding → paywall → nightly log → milestone card. New features need a line in
-  `docs/01-strategy.md` explaining which funnel metric they move.
+  `playbook/01-strategy.md` explaining which funnel metric they move.
 - Every funnel step logs an `AnalyticsEvent`. Add events there, never ad-hoc strings. PostHog is the sink
   when `Config.postHogKey` is set; keep it anonymous (no `identify`, no replay).
 - Copy lives in the views. Short, direct, never judgmental. A drinking night is a number, not a failure.
   No "relapse", no "sober" in UI copy. Health-adjacent copy stays factual; no medical claims.
 - Dark theme only, tokens in `Damp/Design/Theme.swift`.
+
+## Public vs private
+- `docs/` is the published website (GitHub Pages serves every file in it). Only site files go there.
+- Strategy and launch notes live in `playbook/`, never in `docs/`: anything in `docs/` is readable by anyone who guesses the URL.
