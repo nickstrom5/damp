@@ -472,7 +472,7 @@ struct FirstResultScreen: View {
                 .padding(.bottom, 16)
         }
         .sheet(item: $shareImage) { image in
-            ShareSheet(items: [image, "Dry night 1. Drinking less with Damp. getdamp.app"])
+            ShareSheet(items: [image, "Dry night 1. Drinking less with Damp. usedamp.app"])
         }
     }
 }

@@ -53,7 +53,7 @@ struct MilestoneView: View {
             ConfettiView().ignoresSafeArea()
         }
         .sheet(item: $shareImage) { image in
-            ShareSheet(items: [image, "\(cardTitle) with Damp. \(cardDetail). getdamp.app"])
+            ShareSheet(items: [image, "\(cardTitle) with Damp. \(cardDetail). usedamp.app"])
         }
     }
 

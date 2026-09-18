@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# One-shot Cloudflare setup for getdamp.app: DNS for GitHub Pages + email forwarding.
+# One-shot Cloudflare setup for usedamp.app: DNS for GitHub Pages + email forwarding.
 # Idempotent: re-running skips anything that already exists.
 #
 # Usage:  CF_TOKEN=<api token> bash scripts/cloudflare-setup.sh
 # Token needs: Account:Email Routing Addresses:Edit, Zone:Email Routing Rules:Edit,
-#              Zone:DNS:Edit, Zone:Zone:Read, scoped to getdamp.app.
+#              Zone:DNS:Edit, Zone:Zone:Read, scoped to usedamp.app.
 set -euo pipefail
 
-DOMAIN="${DOMAIN:-getdamp.app}"
+DOMAIN="${DOMAIN:-usedamp.app}"
 FORWARD_TO="${FORWARD_TO:-Nickstrom5@gmail.com}"
 GITHUB_USER="${GITHUB_USER:-nickstrom5}"
 GITHUB_TXT_VALUE="${GITHUB_TXT_VALUE:?set to the value GitHub shows at github.com/settings/pages_verified_domains}"

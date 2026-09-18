@@ -60,8 +60,8 @@ Damp is free to try for 7 days, then $29.99/year, $5.99/month, or $49.99 once fo
 Subscriptions renew automatically unless cancelled at least 24 hours before the end of the
 current period. Manage or cancel in Settings > Apple ID > Subscriptions.
 
-Privacy policy: https://getdamp.app/privacy.html
-Terms of use: https://getdamp.app/terms.html
+Privacy policy: https://usedamp.app/privacy.html
+Terms of use: https://usedamp.app/terms.html
 ```
 
 ## Screenshots (6.9-inch, in this order)
@@ -95,7 +95,7 @@ time the user picks, with two actions (log dry / log drinks).
 
 To test: enter any numbers in onboarding, tap "Tonight's dry" on step 7, see the result card.
 Purchases can be tested with the yearly plan; the 7-day trial is configured in App Store
-Connect. The widget extension (app.getdamp.damp.widgets) shows the streak and a button that
+Connect. The widget extension (app.usedamp.damp.widgets) shows the streak and a button that
 opens the app and logs tonight.
 ```
 

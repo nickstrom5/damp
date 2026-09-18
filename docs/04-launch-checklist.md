@@ -2,19 +2,19 @@
 
 ## Day 1 (do these before writing another line of code)
 
-- [ ] Buy `getdamp.app` at Cloudflare Registrar. Then run the runbook in
+- [ ] Buy `usedamp.app` at Cloudflare Registrar. Then run the runbook in
       `docs/10-site-and-email-runbook.md` (or `CF_TOKEN=… bash scripts/cloudflare-setup.sh`).
-- [ ] Create the App ID `app.getdamp.damp` and `app.getdamp.damp.widgets` in the Apple
-      Developer portal (matches `project.yml`). Enable **App Groups** (`group.app.getdamp.damp`)
+- [ ] Create the App ID `app.usedamp.damp` and `app.usedamp.damp.widgets` in the Apple
+      Developer portal (matches `project.yml`). Enable **App Groups** (`group.app.usedamp.damp`)
       on both.
 - [ ] App Store Connect (full walkthrough in `docs/09-app-store-connect.md`): create the app,
       three in-app purchases matching `Damp/Resources/Products.storekit`
       (`damp.yearly`, `damp.monthly`, `damp.lifetime`), one subscription group, 7-day free trial
       intro offer on yearly.
 - [ ] GitHub: push this repo, turn on Pages (Settings → Pages → Deploy from a branch →
-      folder `/docs`), custom domain `getdamp.app` (the `docs/CNAME` file already says so),
+      folder `/docs`), custom domain `usedamp.app` (the `docs/CNAME` file already says so),
       tick "Enforce HTTPS" once the certificate appears.
-- [ ] Cloudflare Email Routing: `support@getdamp.app` and `hello@getdamp.app` → your inbox.
+- [ ] Cloudflare Email Routing: `support@usedamp.app` and `hello@usedamp.app` → your inbox.
       Gmail "Send mail as" for replies. Gmail filter → label "Damp support", skip inbox.
 
 No entitlement request. Damp uses no restricted frameworks. That's the whole reason the

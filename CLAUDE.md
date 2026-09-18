@@ -14,7 +14,7 @@ iOS app (SwiftUI, iOS 17+). Read `README.md` and `docs/01-strategy.md` first.
 - Brand images: `swift scripts/make-brand.swift` regenerates the app icon and `docs/brand/`.
 
 ## Runtime notes
-- No restricted entitlements. Only App Groups (`group.app.getdamp.damp`) for the widget.
+- No restricted entitlements. Only App Groups (`group.app.usedamp.damp`) for the widget.
 - The nightly check-in is a repeating `UNCalendarNotificationTrigger` with two actions (`ReminderManager`).
   The "Dry" action logs without opening the app via the delegate → `AppState.log`.
 - StoreKit uses `Damp/Resources/Products.storekit`; product IDs `damp.yearly`, `damp.monthly`, `damp.lifetime`.
