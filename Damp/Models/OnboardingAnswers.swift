@@ -36,7 +36,7 @@ struct OnboardingAnswers: Codable, Equatable {
         }
     }
 
-    // MARK: - Assumptions (documented in docs/01-strategy.md, cite before submission)
+    // MARK: - Assumptions (documented in playbook/01-strategy.md, cite before submission)
 
     /// Average calories in one standard drink. Beer ~150, wine ~125, cocktail ~200. Kept round.
     static let caloriesPerDrink = 150

@@ -80,7 +80,7 @@ the notification; screenshot 6 is the widget on a real Home Screen.
 
 ## App preview video (15–30s)
 
-Screen recording of the demo in `docs/07-launch-videos.md` video #1, no voiceover, captions on.
+Screen recording of the demo in `playbook/07-launch-videos.md` video #1, no voiceover, captions on.
 
 ## App Review notes
 

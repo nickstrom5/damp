@@ -3,11 +3,11 @@
 ## Day 1 (do these before writing another line of code)
 
 - [ ] Buy `usedamp.app` at Cloudflare Registrar. Then run the runbook in
-      `docs/10-site-and-email-runbook.md` (or `CF_TOKEN=… bash scripts/cloudflare-setup.sh`).
+      `playbook/10-site-and-email-runbook.md` (or `CF_TOKEN=… bash scripts/cloudflare-setup.sh`).
 - [ ] Create the App ID `app.usedamp.damp` and `app.usedamp.damp.widgets` in the Apple
       Developer portal (matches `project.yml`). Enable **App Groups** (`group.app.usedamp.damp`)
       on both.
-- [ ] App Store Connect (full walkthrough in `docs/09-app-store-connect.md`): create the app,
+- [ ] App Store Connect (full walkthrough in `playbook/09-app-store-connect.md`): create the app,
       three in-app purchases matching `Damp/Resources/Products.storekit`
       (`damp.yearly`, `damp.monthly`, `damp.lifetime`), one subscription group, 7-day free trial
       intro offer on yearly.

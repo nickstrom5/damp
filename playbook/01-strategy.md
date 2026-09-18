@@ -108,7 +108,7 @@ users/mo, ~$16k/mo run-rate by month 3, before January.
 
 ## 7. Distribution plan (starts before the app is approved)
 
-See `docs/03-distribution.md`. Short version:
+See `playbook/03-distribution.md`. Short version:
 
 1. **Week 0–1:** study 20 winning videos from Sunnyside, Reframe, sober-curious creators and
    "damp January" content. Save hook, first frame, time-to-product, CTA.
@@ -145,9 +145,9 @@ cancel. The 9pm notification with tap-to-log exists to protect this number.
 
 | Days | Deliverable |
 |---|---|
-| 1 | App Store Connect record, products, small-business program. Domain, Pages, email (runbook in `docs/10-site-and-email-runbook.md`). |
+| 1 | App Store Connect record, products, small-business program. Domain, Pages, email (runbook in `playbook/10-site-and-email-runbook.md`). |
 | 1–4 | Run onboarding on a real phone. Fix the screen you stop wanting to continue on. TestFlight to 10 friends. |
-| 4–7 | Record the first 10 videos (`docs/07-launch-videos.md`). Start posting the Sober October countdown. |
+| 4–7 | Record the first 10 videos (`playbook/07-launch-videos.md`). Start posting the Sober October countdown. |
 | 7 | Submit for review. |
 | 10–14 | Live before Oct 1. Daily posts. |
 | Oct 1–31 | "Day N of Sober October" series. Seed creators. Read every review, one fix a day. |
