@@ -62,10 +62,11 @@ struct SettingsView: View {
                     Button("Restore purchases") { Task { await store.restore() } }
                 }
 
+                HelpSection()
+
                 Section {
                     Link("Privacy policy", destination: Config.privacyURL)
                     Link("Terms", destination: Config.termsURL)
-                    Link("Send feedback", destination: URL(string: "mailto:\(Config.supportEmail)")!)
                 } footer: {
                     Text("Damp \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") · Everything stays on your phone. Damp is a habit tracker, not medical advice. If drinking feels out of control, talk to a doctor or call SAMHSA's helpline: 1-800-662-4357.")
                 }

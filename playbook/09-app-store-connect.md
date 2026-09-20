@@ -72,7 +72,7 @@ Answer honestly for the analytics setup in `Config.swift`:
 - Category: Health & Fitness (primary), Lifestyle (secondary).
 - Age rating: questionnaire → Alcohol, Tobacco, or Drug Use or References: "Infrequent/Mild".
   Everything else "None". Expect 12+.
-- Support URL: https://usedamp.app/ Marketing URL: same.
+- Support URL: https://usedamp.app/support.html Marketing URL: same.
 - Copyright: 2026 <your name>.
 
 ## 8. Version 1.0 page
