@@ -10,7 +10,7 @@ set -euo pipefail
 DOMAIN="${DOMAIN:-usedamp.app}"
 FORWARD_TO="${FORWARD_TO:-Nickstrom5@gmail.com}"
 GITHUB_USER="${GITHUB_USER:-nickstrom5}"
-GITHUB_TXT_VALUE="${GITHUB_TXT_VALUE:-}"   # optional: value from github.com/settings/pages_verified_domains
+GITHUB_TXT_VALUE="${GITHUB_TXT_VALUE:-3cfc05f3b9ca3b4ce521c623cffd56}"   # optional: value from github.com/settings/pages_verified_domains
 API="https://api.cloudflare.com/client/v4"
 
 case "${CF_TOKEN:-}" in ""|yourtoken|PASTE_TOKEN_HERE|"<token>")

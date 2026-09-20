@@ -33,7 +33,7 @@ Also grab the email `press@usedamp.app` → it's covered by the catch-all alread
 - TikTok (80 chars): `Drink less. Not never. 💧 One tap a night. iPhone app, live for Sober October.`
 - Instagram (150 chars): `Drink less. Not never. 💧\nOne tap a night. A streak, the money you kept, a card every milestone.\nNo account, no coach, no judgment ↓`
 - X (160 chars): `Drink less, not never. One-tap dry-night tracker for iPhone. Counts nights, streaks and the money you didn't spend. Building in public. Live for Sober October.`
-- YouTube (1000 chars, use the short one): `Damp counts your dry nights, the money you kept and the mornings you woke up clear. One tap a night from the notification, a card at every milestone, nothing leaves your phone. Free 7-day trial, then $29.99/yr. usedamp.app`
+- YouTube (1000 chars, use the short one): `Damp counts your dry nights, the money you kept and the mornings you woke up clear. One tap a night from the notification, a card at every milestone, nothing leaves your phone. Free 7-day trial, then $19.99/yr. usedamp.app`
 - Threads: same as Instagram.
 - Reddit: `Building Damp, a one-tap dry-night tracker for iPhone. Not a sobriety app; a drink-less app.`
 
@@ -78,7 +78,7 @@ ten more of each. Keep the daily card going all October regardless.
 3. Dry nights, not a dry life.
 4. I put my honest number in. It said $4,160.
 5. 12 dry nights in a row. $120 I still have.
-6. Sunnyside wants $99 a year. This is $30 and has one button.
+6. Sunnyside wants $99 a year. This is $20 and has one button.
 7. A drinking night is a number, not a failure.
 8. Hangxiety isn't a personality trait.
 9. Day N of Sober October. The card says it all.
