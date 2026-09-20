@@ -21,6 +21,12 @@ iOS app (SwiftUI, iOS 17+). Read `README.md` and `playbook/01-strategy.md` first
   `SIMCTL_CHILD_DAMP_FORCE_PRO=1` unlocks Pro in debug builds.
 - All stats are derived (`Stats.compute`) from the log + answers. Never store a streak; recompute it.
 
+- iPhone Duo: `scripts/duo-screenshots.sh` builds, tests and captures every screen on the iPhone Duo simulator
+  (Xcode 27.1+, iOS 27.1 runtime). Xcode 27 replaced Simulator.app with **Device Hub**, which also owns the fold
+  (pose) control; there is no simctl API for posture, so `--pose closed` waits for you to fold it by hand. With
+  Device Hub closed the device reports the outer display; a screenshot that comes back near-black means the app
+  had not drawn yet, which is why the script retries.
+
 ## Conventions
 - One core loop, no feature creep: onboarding → paywall → nightly log → milestone card. New features need a line in
   `playbook/01-strategy.md` explaining which funnel metric they move.
