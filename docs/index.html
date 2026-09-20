@@ -47,7 +47,8 @@
   header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
   .logo svg { width: 28px; height: 28px; }
-  header nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  /* 44px tall, Apple's minimum tap target. */
+  header nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; display: inline-flex; align-items: center; min-height: 44px; }
   header nav a:hover { color: var(--fg); }
   .hero { padding: 56px 0 40px; }
   h1 { font-size: clamp(38px, 8vw, 60px); line-height: 1.05; letter-spacing: -.025em; margin: 0 0 18px; font-weight: 800; }
