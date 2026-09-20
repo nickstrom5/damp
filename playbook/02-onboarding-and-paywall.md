@@ -29,10 +29,10 @@ This is hypothesis #1, not the final flow. The step enum lives in
   graphic: Today (full access) → Day 5 (reminder) → Day 7 (charged). The reminder toggle is on by
   default and actually schedules a local notification. Reframe's worst reviews are all about
   surprise charges; the toggle is the answer to that fear.
-- **Yearly preselected**, shown as "$2.50/mo, billed $29.99/yr". Monthly at $5.99 exists to make
-  yearly obvious. Lifetime at $49.99 catches subscription-haters.
+- **Yearly preselected**, shown as "$1.67/mo, billed $19.99/yr". Monthly at $3.99 exists to make
+  yearly obvious. Lifetime at $29.99 catches subscription-haters.
 - **Personal number above the plans:** "About $2,377 a year back at 4 dry nights a week."
-  The price is smaller than three dry nights. Say so once real conversion data exists.
+  The price is smaller than two dry nights. Say so once real conversion data exists.
 - **Close button** appears after 2 seconds, top-left, low contrast. Apple requires dismissal;
   the delay is standard.
 - **Restore + Terms + Privacy** in the footer (App Review requires all three).
@@ -43,6 +43,6 @@ This is hypothesis #1, not the final flow. The step enum lives in
 2. Reveal number order (money first vs. clear mornings first).
 3. First-night screen: default to logging vs. asking.
 4. Paywall: trial toggle on vs. off by default.
-5. Price: $29.99 vs. $24.99 yearly.
+5. Price: $19.99 vs. $24.99 yearly.
 
 Everything else waits until these five have a read.

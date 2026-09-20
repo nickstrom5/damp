@@ -50,7 +50,7 @@ Ship for October to learn. Optimise for January to earn.
 
 | Competitor | What they do well | What users hate | Damp's answer |
 |---|---|---|---|
-| Sunnyside ($99/yr) | Brand, moderation framing, weekly plan | Text "coach" is a bot, drink-by-drink logging, price | One tap a night. A third of the price. |
+| Sunnyside ($99/yr) | Brand, moderation framing, weekly plan | Text "coach" is a bot, drink-by-drink logging, price | One tap a night. A fifth of the price. |
 | Reframe ($99.99/yr) | Neuroscience course content, community | Billing complaints, upsells, heavy | No courses, no upsells, no account. Cancel in Settings like any app. |
 | I Am Sober (free + $10/mo) | Sobriety streak, community | Abstinence-only; drinking once is "relapse" | A drinking night is a number, not a failure. Streak resets, savings don't. |
 | Try Dry / Drinkaware (free) | Free, charity-backed | UK-focused, dated, no habit loop | Notification with tap-to-log, milestone cards, widget. |
@@ -84,11 +84,11 @@ dry night and seen the first card).
 
 | Plan | Price | Notes |
 |---|---|---|
-| Yearly | **$29.99** with 7-day free trial | Default. "$2.50/mo" framing. Pays for itself on the first three dry nights. |
-| Monthly | $5.99 | Anchor to make yearly obvious. |
-| Lifetime | $49.99 | For the subscription-haters (a loud group in this category's reviews). |
+| Yearly | **$19.99** with 7-day free trial | Default. "$1.67/mo" framing. Pays for itself on the first two dry nights. Set by Nick on 20 Sep 2026 to match Good Walk (was $29.99 / $5.99 / $49.99). |
+| Monthly | $3.99 | Anchor to make yearly obvious. |
+| Lifetime | $29.99 | For the subscription-haters (a loud group in this category's reviews). |
 
-Why these numbers: Sunnyside and Reframe are both ~$100/yr, so $29.99 reads as "the honest one"
+Why these numbers: Sunnyside and Reframe are both ~$100/yr, so $19.99 reads as "the honest one"
 and still supports a business. The paywall says what one dry night is worth in the user's own
 money; the yearly price is less than three of them.
 
@@ -100,11 +100,11 @@ money; the yearly price is less than three of them.
 | Onboarding complete → trial start | 25% |
 | Trial → paid | 40% |
 | Blended install → paid | ~6.5% |
-| Yearly ARPU after Apple's cut (small-business 15%) | ~$25 |
-| Break-even CPI at 6.5% install→paid | ~$1.60 |
+| Yearly ARPU after Apple's cut (small-business 15%) | ~$17 |
+| Break-even CPI at 6.5% install→paid | ~$1.10 |
 
 At 10,000 installs/mo from organic short-form plus a Dry January spike, that is ~650 paying
-users/mo, ~$16k/mo run-rate by month 3, before January.
+users/mo, ~$11k/mo run-rate by month 3, before January.
 
 ## 7. Distribution plan (starts before the app is approved)
 

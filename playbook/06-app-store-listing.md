@@ -56,7 +56,7 @@ Damp is a habit tracker, not medical advice. If drinking feels out of control, t
 doctor or call SAMHSA's helpline at 1-800-662-4357.
 
 PRICING
-Damp is free to try for 7 days, then $29.99/year, $5.99/month, or $49.99 once for life.
+Damp is free to try for 7 days, then $19.99/year, $3.99/month, or $29.99 once for life.
 Subscriptions renew automatically unless cancelled at least 24 hours before the end of the
 current period. Manage or cancel in Settings > Apple ID > Subscriptions.
 

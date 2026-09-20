@@ -59,10 +59,10 @@ Rules for all ten:
 **Music:** whatever's trending that week. Slideshows live on the sound.
 
 ### 6. Sunnyside vs. Damp
-**Hook text:** "Sunnyside wants $99. Here's the $30 version."
+**Hook text:** "Sunnyside wants $99. Here's the $20 version."
 **Shots:**
 1. Sunnyside paywall screenshot. Hold 1s. "$99 a year for a text bot."
-2. Cut: Damp paywall. "$29.99. No bot. One tap a night."
+2. Cut: Damp paywall. "$19.99. No bot. One tap a night."
 3. Home screen demo, 3s.
 4. End card.
 **Note:** Keep it factual. Sunnyside is a real product; we're cheaper and simpler, not better people.

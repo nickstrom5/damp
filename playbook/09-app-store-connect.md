@@ -41,9 +41,9 @@ App IDs (edit each App ID → App Groups → Configure). No special entitlements
 
 | Reference name | Product ID | Type | Price (US) | Intro offer |
 |---|---|---|---|---|
-| Yearly | `damp.yearly` | Auto-renewable, 1 year | $29.99 | Free trial, 7 days, all territories, new subscribers |
-| Monthly | `damp.monthly` | Auto-renewable, 1 month | $5.99 | none |
-| Lifetime | `damp.lifetime` | Non-consumable | $49.99 | n/a |
+| Yearly | `damp.yearly` | Auto-renewable, 1 year | $19.99 | Free trial, 7 days, all territories, new subscribers |
+| Monthly | `damp.monthly` | Auto-renewable, 1 month | $3.99 | none |
+| Lifetime | `damp.lifetime` | Non-consumable | $29.99 | n/a |
 
 Product IDs must match `Damp/Services/StoreManager.swift` exactly.
 

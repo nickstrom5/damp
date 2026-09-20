@@ -35,7 +35,7 @@ change the story, post at volume, and judge by the tier ladder, not by views.
 5. POV: it's 9pm and your phone asks "dry tonight?"
 6. Hangxiety isn't a personality trait.
 7. $343 kept in 30 nights. Show me a savings account that does that.
-8. Sunnyside wants $99/year. Here's the $30 version.
+8. Sunnyside wants $99/year. Here's the $20 version.
 9. I put my honest number in. It said $4,160.
 10. The "damp lifestyle" app that actually exists now.
 11. 12 dry nights in a row. Here's what my phone looks like.
@@ -77,4 +77,4 @@ change the story, post at volume, and judge by the tier ladder, not by views.
 - $20/day per concept on TikTok Spark Ads first (boosting the organic post keeps social proof).
 - Alcohol policy: frame as wellness / drinking less; never show drinking. Both TikTok and Meta
   allow that; both reject "alcohol" creative that shows consumption.
-- Kill anything above $2.50 CPI after $100 spend. Scale anything under $1.60.
+- Kill anything above $1.75 CPI after $100 spend. Scale anything under $1.10.
