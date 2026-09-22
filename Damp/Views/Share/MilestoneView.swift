@@ -6,6 +6,9 @@ struct MilestoneView: View {
     @Environment(\.dismiss) private var dismiss
     let streak: Int
     @State private var shareImage: UIImage?
+    /// Measured so the 300pt card can shrink to sit fully above the pinned buttons on an iPhone SE.
+    @State private var availableHeight: CGFloat = 900
+    private var cardScale: CGFloat { availableHeight < 700 ? 0.72 : 1 }
 
     private var worth: Double { Double(streak) * appState.answers.savedPerDryNight }
     private var cardTitle: String { "\(streak) dry night\(streak == 1 ? "" : "s")" }
@@ -14,42 +17,54 @@ struct MilestoneView: View {
     var body: some View {
         ZStack {
             Theme.background.ignoresSafeArea()
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(headline)
-                        .font(Theme.Font.headline)
-                        .foregroundStyle(Theme.textSecondary)
-                        .padding(.top, 8)
-                    HStack(alignment: .firstTextBaseline, spacing: 10) {
-                        CountUpText(target: streak)
-                            .font(Theme.Font.display(88))
-                            .foregroundStyle(Theme.accent)
-                        Text(streak == 1 ? "dry night." : "dry nights\nin a row.")
-                            .font(Theme.Font.title)
-                            .foregroundStyle(Theme.textPrimary)
+            VStack(spacing: 0) {
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(headline)
+                            .font(Theme.Font.headline)
+                            .foregroundStyle(Theme.textSecondary)
+                            .padding(.top, 8)
+                        HStack(alignment: .firstTextBaseline, spacing: 10) {
+                            CountUpText(target: streak)
+                                .font(Theme.Font.display(88))
+                                .foregroundStyle(Theme.accent)
+                            Text(streak == 1 ? "dry night." : "dry nights\nin a row.")
+                                .font(Theme.Font.title)
+                                .foregroundStyle(Theme.textPrimary)
+                        }
+                        Text("That's about \(Stats.money(worth)) kept and \(Stats.calories(Int(Double(streak) * appState.answers.baselineDrinksPerDay * Double(OnboardingAnswers.caloriesPerDrink)))) calories skipped. And \(streak) morning\(streak == 1 ? "" : "s") you woke up clear.")
+                            .font(Theme.Font.body)
+                            .foregroundStyle(Theme.textSecondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.top, 4)
+
+                        ShareCardView(title: cardTitle, detail: cardDetail, streak: streak)
+                            .scaleEffect(cardScale)
+                            .frame(width: 300 * cardScale, height: 300 * cardScale)
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, cardScale < 1 ? 8 : 24)
                     }
-                    Text("That's about \(Stats.money(worth)) kept and \(Stats.calories(Int(Double(streak) * appState.answers.baselineDrinksPerDay * Double(OnboardingAnswers.caloriesPerDrink)))) calories skipped. And \(streak) morning\(streak == 1 ? "" : "s") you woke up clear.")
-                        .font(Theme.Font.body)
-                        .foregroundStyle(Theme.textSecondary)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .padding(.top, 4)
-
-                    ShareCardView(title: cardTitle, detail: cardDetail, streak: streak)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 24)
-
+                    .padding(.horizontal, Theme.horizontalPadding)
+                    .padding(.top, 36)
+                    .padding(.bottom, 24)
+                }
+                .fadesUnderPinnedButton()
+                // Pinned, so the way out is on screen even when the card doesn't fit (iPhone SE).
+                VStack(spacing: 4) {
                     SecondaryButton(title: "Share the card") {
                         Analytics.track(.shareTapped, ["from": "milestone", "streak": streak])
                         shareImage = ShareCardView(title: cardTitle, detail: cardDetail, streak: streak).render()
                     }
-                    .padding(.top, 12)
                     PrimaryButton(title: "Keep going") { dismiss() }
-                        .padding(.top, 4)
                 }
                 .padding(.horizontal, Theme.horizontalPadding)
-                .padding(.top, 36)
-                .padding(.bottom, 24)
+                .padding(.bottom, 16)
             }
+            .background(GeometryReader { geo in
+                Color.clear
+                    .onAppear { availableHeight = geo.size.height }
+                    .onChange(of: geo.size.height) { _, h in availableHeight = h }
+            })
             ConfettiView().ignoresSafeArea()
         }
         .sheet(item: $shareImage) { image in

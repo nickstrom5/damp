@@ -16,10 +16,17 @@ struct PaywallView: View {
     @State private var remindBeforeTrialEnds = true
     @State private var showClose = false
     @State private var purchasing = false
+    @State private var availableHeight: CGFloat = 900
 
     var body: some View {
         ZStack(alignment: .topLeading) {
             Theme.background.ignoresSafeArea()
+            // Measure rather than guess: on an iPhone SE (and the folded iPhone Duo) the three-step
+            // timeline pushes the plan rows behind the pinned button.
+            GeometryReader { geo in
+                Color.clear.onAppear { availableHeight = geo.size.height }
+                    .onChange(of: geo.size.height) { _, h in availableHeight = h }
+            }
 
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 20) {
@@ -86,15 +93,34 @@ struct PaywallView: View {
         }
     }
 
+    /// The trial explained. On a short screen the three-step version pushes the plans below the
+    /// fold, so it collapses to one line there.
+    private var isShortScreen: Bool { availableHeight < 720 }
+
+    @ViewBuilder
     private var timeline: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            TimelineRow(symbol: "drop.fill", title: "Today", detail: "Full access. Log tonight, watch the savings.", isFirst: true)
-            TimelineRow(symbol: "bell.fill", title: "Day 5", detail: "We remind you the trial is ending.")
-            TimelineRow(symbol: "star.fill", title: "Day 7", detail: "Trial ends. Cancel any time before.", isLast: true)
+        if isShortScreen {
+            HStack(spacing: 10) {
+                Image(systemName: "bell.fill").foregroundStyle(Theme.accent)
+                Text("Full access today. We remind you on day 5. Cancel any time before day 7.")
+                    .font(Theme.Font.caption)
+                    .foregroundStyle(Theme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Theme.surface)
+            .clipShape(RoundedRectangle(cornerRadius: Theme.cornerRadius, style: .continuous))
+        } else {
+            VStack(alignment: .leading, spacing: 0) {
+                TimelineRow(symbol: "drop.fill", title: "Today", detail: "Full access. Log tonight, watch the savings.", isFirst: true)
+                TimelineRow(symbol: "bell.fill", title: "Day 5", detail: "We remind you the trial is ending.")
+                TimelineRow(symbol: "star.fill", title: "Day 7", detail: "Trial ends. Cancel any time before.", isLast: true)
+            }
+            .padding(18)
+            .background(Theme.surface)
+            .clipShape(RoundedRectangle(cornerRadius: Theme.cornerRadius, style: .continuous))
         }
-        .padding(18)
-        .background(Theme.surface)
-        .clipShape(RoundedRectangle(cornerRadius: Theme.cornerRadius, style: .continuous))
     }
 
     private var plans: some View {

@@ -233,6 +233,7 @@ struct RevealScreen: View {
                 .padding(.top, 36)
                 .padding(.bottom, 24)
             }
+            .fadesUnderPinnedButton()
             PrimaryButton(title: "I want that back", action: onNext)
                 .padding(.horizontal, Theme.horizontalPadding)
                 .padding(.bottom, 16)
@@ -467,6 +468,7 @@ struct FirstResultScreen: View {
                 .padding(.top, 36)
                 .padding(.bottom, 24)
             }
+            .fadesUnderPinnedButton()
             PrimaryButton(title: "Keep it going", action: onNext)
                 .padding(.horizontal, Theme.horizontalPadding)
                 .padding(.bottom, 16)
