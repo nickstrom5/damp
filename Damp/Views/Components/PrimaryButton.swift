@@ -96,7 +96,7 @@ struct Chip: View {
                     Text(label)
                         .font(Theme.Font.headline)
                         .lineLimit(1)
-                        .minimumScaleFactor(0.8)
+                        .minimumScaleFactor(0.7)
                     if let detail {
                         Text(detail)
                             .font(Theme.Font.caption)

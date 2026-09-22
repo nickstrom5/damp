@@ -20,7 +20,7 @@ struct OnboardingAnswers: Codable, Equatable {
             case .hangxiety: return "Hangxiety"
             case .weight: return "Lose weight"
             case .health: return "Long-term health"
-            case .challenge: return "Sober October / a challenge"
+            case .challenge: return "A dry month"   // Sober October, Dry January; the long form truncated on an iPhone SE
             }
         }
 
